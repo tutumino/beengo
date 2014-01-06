@@ -1,0 +1,1073 @@
+@charset "UTF-8";
+html {
+    overflow: auto;
+}
+body {
+    background: #fefdfa;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', Helvetica, Arial, Verdana, sans-serif;
+    color: #3d3d3d;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+}
+p {
+    font-size: 16px;
+    line-height: 1.8em;
+}
+a {
+    color: #dd7711;
+    text-decoration: none;
+}
+a:visited {
+    color: #dd7711;
+}
+a:hover {
+    color: #eebb77;
+    text-decoration: underline;
+}
+a:active {
+    color: #eebb77;
+    text-decoration: underline;
+}
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+.link_area_all{ /* リンクエリアを親要素全体に広げる設定 */
+    display: block;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.translucent:hover{ /* マウスオーバーで半透明 */
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+/************************************************
+ヘッダー
+*************************************************/
+#header_area {
+    width: 100%;
+    border-top: 5px solid #cc3344;
+    overflow: visible;
+    /*background: #eff0e6;*/
+}
+    #header {
+        width: 1000px;
+        height: 39px;
+        margin: 0 auto 100px auto;
+        position: relative;
+        overflow: visible;
+    }
+        #header h1 {
+            background: url(../img/logo.png) no-repeat;
+            width: 230px;
+            height: 108px;
+            text-indent: -9999px;
+            position: relative;
+            top: 13px;
+        }
+        #gmenu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #3d3d3d;
+            font-size: 15px;
+        }
+            #gmenu li {
+                float: left;
+                margin-left: 20px;
+            }
+            #gmenu li a {
+                display: block;
+                /*width: 100%;*/
+                /*height: 100%;*/
+                color: #3d3d3d;
+                text-decoration: none;
+                padding: 9px 0;
+            }
+            #gmenu li a:visited {
+                color: #3d3d3d;
+                text-decoration: none;
+            }
+            #gmenu li a:hover {
+                /*color: #ffffff;*/
+                text-decoration: none;
+                /*background: #ee9944;*/
+                border-bottom: 3px solid #ee9944;
+            }
+            #gmenu li a:active {
+                color: #3d3d3d;
+                text-decoration: none;
+            }
+
+/************************************************
+トップページ　トップエリア
+*************************************************/
+#top_area {
+    width: 100%;
+    /*background-position: center center;*/
+    padding: 10px 0 60px 0;
+}
+    #top {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+        #top #catch {
+            float: left;
+            text-align: left;
+            margin-top: 10px;
+        }
+            #top #catch h2 {
+                font-size: 29px;
+                letter-spacing: 0.1em;
+                line-height: 1.7em;
+                /*font-weight: bold;*/
+                margin-bottom: 5px;
+                color: #5f5f5f;
+            }
+            #top #immediately {
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+            #top #sns {
+                /*float: right;*/
+                /*margin-top: 20px;*/
+            }
+        #captures_area {
+            width: 500px;
+            height: 300px;
+            float: right;
+            margin-top: -30px;
+            overflow: hidden;
+        }
+            #captures_wrapper {
+                width: 2000px;
+            }
+                #captures_area img {
+                    float: left;
+                    margin: 0;
+                }
+        #appeal_boxes {
+            clear: both;
+        }
+            #top .appeal_box {
+                float: left;
+                width: 324px;
+                min-height: 464px;
+                background: #ffffff;
+                /*padding: 20px;*/
+                text-align: left;
+                margin-right: 14px;
+            }
+            #top .appeal_box:nth-child(3n) {
+                margin-right: 0;
+            }
+                #top .appeal_box h3 {
+                    font-size: 22px;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                    padding: 17px 23px;
+                    /*margin-bottom: 10px;*/
+                    background: #cc3344;
+                    color: #ffffff;
+                }
+                #top .appeal_box p {
+                    font-size: 15px;
+                    padding: 12px 23px 0 23px;
+                }
+                #top .appeal_box p + p {
+                    padding-top: 0;
+                }
+
+
+/************************************************
+イベントページ作成
+*************************************************/
+#create_event_area {
+    width: 100%;
+    margin-top: 40px;
+    font-size: 16px;
+}
+    #create_event_h {
+        width: 100%;
+        background: #cc3344;
+        margin-bottom: 40px;
+    }
+        #create_event_h h3 {
+            padding: 25px 0 10px 0;
+            font-size: 33px;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+        }
+        #create_event_h p {
+            font-size: 16px;
+            color: #ffffff;
+            padding-bottom: 25px;
+        }
+        .input_part {
+            margin: 0 0 30px 0;
+        }
+            .input_text {
+                width: 500px;
+                /*height: 40px;*/
+                border: 1px solid #cc3344;
+                padding: 12px 13px;
+            }
+            .textarea {
+                width: 500px;
+                border: 1px solid #cc3344;
+                padding: 10px 16px;
+                line-height: 1.6em;
+            }
+            #required_time {
+                -webkit-appearance: button;
+                -moz-appearance: button;
+                appearance: button;
+                width: 500px;
+                padding: 9px 30px;
+                border: 1px solid #cc3344;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                -o-border-radius: 0;
+                -ms-border-radius: 0;
+                border-radius: 0;
+                cursor: pointer;
+                /*text-align: center;*/
+                background: url(../img/select_s.png) no-repeat;
+                background-position: 450px 13px;
+                background-color: #ffffff;
+            }
+            .input_title {
+                font-size: 23px;
+                color: #cc3344;
+            }
+            .input_note {
+                font-size: 14px;
+                font-weight: bold;
+                width: 500px;
+                line-height: 1.6em;
+                margin: 3px auto;
+                /*color: #cc3344;*/
+            }
+            .input_note + .input_note {
+                margin-top: 15px;
+            }
+            .err_msg {
+                font-size: 14px;
+                font-weight: bold;
+                color: #cc3344;
+            }
+
+
+        #added_datetime_area {
+            width: auto;
+            min-height: 200px;
+            height: auto !important; /*IE対策？*/
+            height: 200px;　/*IE対策？*/
+            text-align: center;
+        }
+            #added_datetime_table {
+                margin: 10px auto 30px auto;
+                width: 540px;
+                border-collapse: collapse;
+            }
+                .added_datetime {
+                    font-size: 24px;
+                }
+                    .added_datetime .year {
+                        font-size: 16px;
+                        color: #666666;
+                        margin: 0 5px 0 20px;
+                    }
+                .del_btn {
+                    text-align: center;
+                    font-size: 16px;
+                    color: #dd7711;
+                    cursor: pointer;
+                }
+                .del_btn:hover {
+                    color: #eebb77;
+                    text-decoration: underline;
+                }
+                .del_btn:active {
+                    color: #eebb77;
+                    text-decoration: underline;
+                }
+                .del_btn:visited {
+                    color: #dd7711;
+                }
+                .hidden {
+                     display: none;
+                }
+
+/************************************************
+カレンダー
+*************************************************/
+#cal_switch_btn_area {
+    width: 210px;
+    text-align: center;
+    margin: 20px auto 10px auto;
+}
+    #pre_month_btn {
+        float: left;
+        font-size: 17px;
+        color: #cc3344;
+        margin: 3px 5px 3px 5px;
+        cursor: pointer;
+        text-decoration: underline;
+        user-select: none; /* CSS3 */
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Safari、Chromeなど */
+        -ms-user-select: none; /* IE10かららしい */
+        unselectable="on"; /* IE */
+    }
+        #pre_month_btn:hover {
+            color: #dd7788;
+        }
+    #nxt_month_btn {
+        float: right;
+        font-size: 17px;
+        color: #cc3344;
+        margin: 3px 5px 3px 5px;
+        cursor: pointer;
+        text-decoration: underline;
+        user-select: none; /* CSS3 */
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Safari、Chromeなど */
+        -ms-user-select: none; /* IE10かららしい */
+        unselectable="on"; /* IE */
+    }
+        #nxt_month_btn:hover {
+            color: #dd7788;
+        }
+#insert_cal_area {
+    margin: 0 auto;
+    text-align: center;
+    width: 860px;
+    min-height: 260px;
+    height: auto !important; /*IE対策？*/
+    height: 260px;　/*IE対策？*/
+}
+#insert_cal_area table {
+    width: 280px;
+    margin: 0 3px 0 3px;
+    border-collapse: collapse;
+    border: none;
+    float: left;
+    box-shadow: 0px 0px 6px #999999;
+    -moz-box-shadow: 0px 0px 6px #999999;
+    -webkit-box-shadow: 0px 0px 6px #999999;
+}
+    .cal_head {
+        border: 1px solid #cc3344;
+        background: #cc3344;
+        color: #F8F8F8;
+        font-size: 14px;
+        text-align: center;
+        padding: 8px 0 2px 0;
+    }
+    .cal_days_row th {
+        border: 1px solid #cc3344;
+        background: #cc3344;
+        color: #F8F8F8;
+        font-size: 11px;
+        text-align: center;
+        padding: 0px 0 5px 0;
+    }
+    #insert_cal_area td {
+        border: 2px solid #ffffff;
+        color: #000000;
+        font-size: 13px;
+        text-align: center;
+        padding: 5px 0;
+        user-select: none; /* CSS3 */
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Safari、Chromeなど */
+        -ms-user-select: none; /* IE10かららしい */
+        unselectable="on"; /* IE */
+    }
+        .cal_emptyTd {
+            background: #ffffff;
+            cursor: default;
+        }
+        .cal_off {
+            background: #ffffff;
+            cursor: pointer;
+        }
+        .cal_off:hover {
+            background: #eeeeee;
+            cursor: pointer;
+        }
+        .cal_on {
+            background: #ee9944;
+            cursor: pointer;
+        }
+        .cal_on:hover {
+            background: #ee9944;
+            cursor: pointer;
+        }
+        .cal_added {
+            background: #fbe5d0;
+            cursor: pointer;
+        }
+
+/************************************************
+時間指定
+*************************************************/
+#time_select_area {
+    width: 835px;
+    margin: 0 auto 0 auto;
+}
+    .time_select {
+        width: 190px;
+        text-align: center;
+        float: left;
+        margin-right: 25px;
+    }
+    .time_select:nth-child(4) {
+        margin-right: 0;
+    }
+        .time_select select {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            width: 80px;
+            padding: 7px 10px;
+            border: 1px solid #cc3344;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            -o-border-radius: 0px;
+            -ms-border-radius: 0px;
+            border-radius: 0px;
+            cursor: pointer;
+            background: url(../img/select_s.png) no-repeat;
+            background-position: 50px 8px;
+            background-color: #ffffff;
+        }
+        .time_select select[disabled] {
+            color: #cccccc;
+            border-color: #f3ced2;
+            background: url(../img/select_s_disabled.png) no-repeat;
+            background-position: 50px 8px;
+            background-color: #ffffff;
+        }
+        .colon {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+/************************************************
+ボタン関係
+*************************************************/
+.btn_green {
+    padding: 8px 25px;
+    background: #ee9944;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+    /*letter-spacing: 0.3em;*/
+    text-align: center;
+    border-style: none;
+    margin: 15px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /*スマホ、タップで色変えない指定*/
+}
+.btn_green:visited {
+    background: #ddaa33;
+}
+.btn_green:hover {
+    background: #dd7711;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.btn_green:active {
+    background: #dd7711;
+}
+.btn_red {
+    padding: 8px 25px;
+    background: #cc3344;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
+    /*letter-spacing: 0.3em;*/
+    text-align: center;
+    border-style: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 180px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /*スマホ、タップで色変えない指定*/
+}
+.btn_red:visited {
+    background: #cc3344;
+}
+.btn_red:hover {
+    background: #bb3344;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.btn_red:active {
+    background: #bb3344;
+}
+.shadow {
+    box-shadow: 0px 0px 6px #999999;
+    -moz-box-shadow: 0px 0px 6px #999999;
+    -webkit-box-shadow: 0px 0px 6px #999999;
+}
+.shadow2 {
+    box-shadow: 0px 0px 3px 0 #999999;
+    -moz-box-shadow: 0px 0px 3px 0 #999999;
+    -webkit-box-shadow: 0px 0px 3px 0 #999999;
+}
+
+
+/************************************************
+イベントページ
+*************************************************/
+#invitation_outer {
+    width: 682px;
+    margin: 0 auto;
+    padding: 6px;
+    position: relative;
+    overflow: hidden;
+}
+    .ribbon {
+        width: 195px;
+        height: 43px;
+        position: absolute;
+        text-align: center;
+        top: 25px;
+        right: -51px;
+        z-index: 1;
+        background: #cc3344;
+        /*background-image: url(../img/ribbon_bee.png);*/
+        /*background-image: url(../img/invitation.png);
+        background-repeat: no-repeat;
+        background-position: center center;*/
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+    }
+        .ribbon p {
+            /*display: inline-block;*/
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 5px;
+            color: #932531;
+        }
+    .ribbon:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 37px;
+        right: 179px;
+        z-index: -1;
+        border: 6px solid;
+        border-color: transparent transparent #932531 transparent;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+    }
+    .ribbon:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 37px;
+        right: 4px;
+        z-index: -1;
+        border: 6px solid;
+        border-color: transparent transparent transparent #932531;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+    }
+    #invitation {
+        width: 670px;
+        background: #ffffff;
+        padding-bottom: 30px;
+        /*background: url(../img/invitation_bg.jpg);*/
+    }
+        #master_name_area {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 30px;
+            padding: 20px 50px 20px 50px;
+            background: #fafafa;
+            border-top: 4px solid #ee9944;
+            border-bottom: 1px solid #e0e0e0;
+            
+        }
+            #master_name_area p {
+                font-size: 14px;
+                line-height: 1.7em;
+            }
+                #master_name_area p span {
+                    font-weight: bold;
+                    font-size: 17px;
+                    margin-right: 3px;
+                }
+        #title_area {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 20px 50px;
+        }
+            #title_area h2 {
+                font-size: 33px;
+                letter-spacing: 0.1em;
+                line-height: 1.5em;
+            }
+        #fixed_datetime_area {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+            #fixed_datetime_area span {
+                font-size: 24px;
+                margin-left: 3px;
+            }
+        #description_area {
+            width: 100%;
+            text-align: left;
+            margin: 0 auto 30px auto;
+            padding: 20px 50px;
+        }
+            #description_area p {
+                line-height: 1.7em;
+            }
+        .map_type {
+            text-align: center;
+            /*padding: 0 0 10px 0;*/
+            font-size: 27px;
+            letter-spacing: 0.2em;
+            /*font-weight: bold;*/
+            /*margin: 20px 0;*/
+        }
+        #invitation #googlemaps {
+            width: 564px;
+            height: 400px;
+            margin: 0 auto 30px auto;
+            border: 5px solid #cc3344;
+        }
+#required_time_area {
+    width: 600px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+}
+    #required_time_area p {
+        font-size: 19px;
+    }
+        #required_time_area p span {
+            font-weight: bold;
+        }
+.input_note_L {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px auto;
+    color: #cc3344;
+}
+.input_note_S {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 20px auto;
+    color: #cc3344;
+    line-height: 1.6em;
+}
+#input_answers_area {
+    width: 600px;
+    text-align: center;
+    margin: 0 auto 50px auto;
+}
+    .input_answer_box {
+        width: 600px;
+        text-align: center;
+        margin: 0 auto 0 auto;
+        padding: 15px 0;
+        border-bottom: 1px solid #ee9944;
+    }
+        .datetime_box {
+            float: right;
+        }
+            .datetime_box p {
+                font-size: 25px;
+                line-height: 1.1em;
+                /*font-weight: bold;*/
+            }
+                .datetime_box .year {
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+        .answer_radio_box {
+            width: 97px;
+            float: left;
+        }
+            .answer_radio_box label {
+                font-size: 14px;
+                line-height: 1.1em;
+            }
+
+/************************************************
+イベントマスターページ
+*************************************************/
+#answers_table_area {
+    width: 90%;
+    overflow: scroll;
+    margin: 0 auto 30px auto;
+}
+    #answers_table {
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+        #answers_table .h_row {
+            border-bottom-width: 3px;
+            border-bottom-color: #cc3344;
+            border-bottom-style: solid;
+            line-height: 1.1em;
+        }
+        #answers_table .row {
+            border-bottom-width: 1px;
+            border-bottom-color: #cc3344;
+            border-bottom-style: solid;
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+            #answers_table .radio_col {
+                width: 40px;
+                min-width: 40px;
+                max-width: 40px;
+            }
+            #answers_table .datetimes_col {
+                width: 170px;
+                min-width: 170px;
+                max-width: 170px;
+            }
+            #answers_table .answers_col {
+                width: 76px;
+                min-width: 76px;
+                max-width: 76px;
+                text-align: center;
+                padding: 4px 10px;
+                font-size: 14px;
+                font-weight: normal;
+            }
+            #answers_table .radio_td {
+                text-align: center;
+            }
+            #answers_table .datetime_td {
+                text-align: center;
+            }
+                #answers_table .datetime_td .year {
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            #answers_table .answer_td {
+                text-align: center;
+                /*border-bottom-width: 2px;
+                border-bottom-color: #aaaaaa;
+                border-bottom-style: dashed;*/
+            }
+            #answers_table .level1 {
+                background: #f1c6cb;
+            }
+            #answers_table .level2 {
+                background: #fbeff0;
+            }
+
+        #comments {
+            width: 100%;
+            margin: 0 0 40px 0;
+        }
+            /*吹き出し*/
+            #comments .comment_wrapper {
+                width: 640px;
+                margin: 0 auto;
+                padding: 6px 0;
+
+            }
+                #comments .comment_wrapper .member_name {
+                    float: left;
+                    padding: 3px 0 0 0;
+                    width: 70px;
+                }
+                    #comments .comment_wrapper .member_name p {
+                        float: right;
+                        font-size: 14px;
+                        line-height: 1.4em;
+                        text-align: right;
+                    }
+                #comments .comment_wrapper .comment_outer {
+                    position: relative;
+                }
+                    #comments .comment_wrapper .comment_outer .comment {
+                        position: relative;
+                        background: #eebb77;
+                        padding: 13px 20px;
+                        width: 510px;
+                        text-align: left;
+                        -moz-border-radius: 7px;
+                        -webkit-border-radius: 7px;
+                        -o-border-radius: 7px;
+                        -ms-border-radius: 7px;
+                        border-radius: 7px;
+                        float: right;
+                        font-size: 14px;
+                    }
+                    #comments .comment_wrapper .comment_outer .comment:after {
+                        content: '';
+                        position: absolute;
+                        border-top: 5px solid transparent;
+                        border-right: 50px solid #eebb77;
+                        border-bottom: 13px solid transparent;
+                        top: 10px;
+                        left: -50px;
+                    }
+
+    #create_invitation_btn {
+        margin: 0 auto 40px auto;
+    }
+        #create_invitation_btn a{
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    #input_invitation {
+        width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+        #description2 {
+            width: 600px;
+        }
+        #select_map_type {
+            width: 325px;
+            text-align: left;
+            margin: 0 auto 20px auto;
+        }
+        #search_map_btn {
+            width: 600px;
+            margin: 0 auto 15px auto;
+        }
+            #search_map_btn input[type="text"] {
+                width: 530px;
+                float: left;
+                margin: 0;
+            }
+            #search_map_btn input[type="button"] {
+                width: 70px;
+                height: 44px;
+                float: right;
+                padding: 0;
+                margin: 0;
+            }
+        #input_invitation #googlemaps {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto 30px auto;
+            border: 5px solid #cc3344;
+        }
+
+/************************************************
+createdページ　fixedページ
+*************************************************/
+#fixed_msg {
+    width: 500px;
+    margin: 20px auto 0 auto;
+}
+    #fixed_msg span {
+        font-weight: bold;
+    }
+#created_msg {
+    width: 500px;
+    margin: 20px auto 0 auto;
+}
+    #created_msg span {
+        font-weight: bold;
+    }
+.this_is_the_URL {
+    width: 500px;
+    margin: 40px auto 20px auto;
+}
+    .this_is_the_URL span {
+        font-weight: bold;
+    }
+    .this_is_the_URL input[type="text"] {
+        width: 500px;
+        margin: 10px auto;
+        font-size: 21px;
+    }
+#event_shere_way {
+    margin: 0 auto 0 auto;
+    width: 500px;
+    position: relative;
+    background: #ffffff;
+    border-top: #cc3344 solid 3px;
+    padding: 20px 0;
+}
+    #shere_way_btn_wrapper {
+        width: 250px;
+        margin: 0 auto;
+    }
+        #shere_way_send_mail {
+            width: 87px;
+            padding: 1px 4px;
+            background: #cc3344;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -o-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+            float: left;
+        }
+        #shere_way_send_mail:hover {
+            background: #bb3344;
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+            #shere_way_send_mail a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 1px 4px;
+                color: #ffffff;
+                font-size: 11px;
+                font-weight: bold;
+            }
+            #shere_way_send_mail a:visited {
+                color: #ffffff;
+            }
+            #shere_way_send_mail a:hover {
+                color: #ffffff;
+                text-decoration: none;
+            }
+        #shere_way_line {
+            width: 90px;
+            float: left;
+            display: none;
+        }
+        #shere_way_facebook {
+            width: 90px;
+            float: left;
+        }
+        #shere_way_google {
+            width: 90px;
+            float: left;
+            margin-left: -20px;
+        }
+#master_url {
+    font-size: 20px;
+    margin-bottom: 200px;
+}
+
+
+/************************************************
+completeページ
+*************************************************/
+#complete_msg {
+    width: 500px;
+    margin: 20px auto 50px auto;
+}
+
+ 
+/************************************************
+SNSシェア
+*************************************************/ 
+#shere_msg {
+    width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 50px 0;
+}
+    #shere_msg p {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.7em;
+    }
+#sns {
+    width: 365px;
+    /*margin: 0 auto;*/
+    text-align: left;
+    margin-bottom: 20px;
+}
+    #sns #btn_facebook {
+        /*margin-bottom: 10px;*/
+    }
+    #sns #btn_twitter {
+        margin-bottom: 6px;
+        float: left;
+    }
+    #sns #btn_google {
+        margin-bottom: 6px;
+        float: left;
+        margin-top: -3px;
+    }
+    #sns #btn_line {
+
+    }
+
+#shere_msg #sns {
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/************************************************
+パスワード入力画面
+*************************************************/
+#input_pass_box {
+    width: 410px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    padding: 30px 0 40px 0;
+    background: #ffffff;
+    margin-bottom: 50px;
+    border-top: #cc3344 4px solid;
+}
+    #input_pass_box p {
+        padding: 10px 0;
+    }
+        #input_pass_box p span {
+            font-weight: bold;
+            font-size: 14px;
+        }
+    #input_pass_box #input_pass {
+        width: 320px;
+        margin: 0 auto 0 auto;
+        padding: 10px 0 0 0;
+    }
+        #input_pass_box #input_pass input[type="password"] {
+            width: 250px;
+            float: left;
+            margin: 0;
+            padding: 10px;
+        }
+        #input_pass_box #input_pass input[type="submit"] {
+            width: 70px;
+            height: 40px;
+            float: right;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+
+
