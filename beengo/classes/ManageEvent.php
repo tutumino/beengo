@@ -161,6 +161,7 @@ class ManageEvent extends ManageDB {
     //     )
     // --------------------------------------------------
     public function getFixed() {
+        date_default_timezone_set('Asia/Tokyo');
         $where = 'event_id = :event_id && flag_fixed = 1';
         $temp = $this->select('`datetime`', '`datetimes`', $where, array('event_id' => $this->eventId));
 
