@@ -1,6 +1,7 @@
 <?php
 
 require_once('../config/config.php');
+require_once('../config/jp_setting.php');
 require_once('classes/ManageDB.php');
 // require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');

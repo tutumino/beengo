@@ -20,6 +20,7 @@ class ManageEvent extends ManageDB {
     // 戻り値：結果セット（連想配列）
     // --------------------------------------------------
     public function getEvent() {
+
         $fields = '*';
         $where = 'event_id = :event_id && flag_del = 0';
         // var_dump($this->eventId);
@@ -45,7 +46,7 @@ class ManageEvent extends ManageDB {
     //     )
     // --------------------------------------------------
     public function getDatetimes() {
-        date_default_timezone_set('Asia/Tokyo');
+
         $fields = 'datetime_id, datetime';
         $where = 'event_id = :event_id order by datetime_id';
         $temp = $this->select($fields, 'datetimes', $where, array('event_id' => $this->eventId));
@@ -94,7 +95,7 @@ class ManageEvent extends ManageDB {
     //     $res['answer']（配列）
     // --------------------------------------------------
     public function getRegistered($memberId) {
-        
+
         $res = array();
 
         $fields = 'member_name, comment';
@@ -122,6 +123,7 @@ class ManageEvent extends ManageDB {
     // 戻り値：array $res（member_idを格納した配列）
     // --------------------------------------------------
     public function getMemberIDs() {
+
         $where = '`event_id` = :event_id';
         $temp = $this->select('member_id', 'members', $where, array('event_id' => $this->eventId));
         $res = array();
@@ -161,7 +163,7 @@ class ManageEvent extends ManageDB {
     //     )
     // --------------------------------------------------
     public function getFixed() {
-        date_default_timezone_set('Asia/Tokyo');
+
         $where = 'event_id = :event_id && flag_fixed = 1';
         $temp = $this->select('`datetime`', '`datetimes`', $where, array('event_id' => $this->eventId));
 
