@@ -111,7 +111,9 @@ $(function() {
                         for ($j = 0; $j < count($registers); $j++) {
                             $temp[] = $registers[$j]['answer'][$i];
                         }
-                        $temp = array_count_values($temp);
+                        if (isset($temp)) {
+                            $temp = array_count_values($temp);
+                        }
 
                         for ($j = 0; $j < count($registers); $j++) {
                             // すべて「ok」なら、tdのclassにlevel1を付ける
