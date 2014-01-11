@@ -29,10 +29,7 @@ $res = $res->fetch(PDO::FETCH_ASSOC);
 
 $(function() {
     $('#event_url').select();
-    $('#event_url').focus(function() {
-        $(this).select();
-    })
-    .click(function() {
+    $('#event_url').click(function() {
         $(this).select();
     });
 })

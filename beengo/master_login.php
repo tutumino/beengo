@@ -11,17 +11,7 @@ session_start();
 // var_dump($_SESSION['event_id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-
-    // $getEventId = new GetEventID();
-    // var_dump($getEventId);
-    // $eventId = $getEventId->get($_GET['address']);
-    // var_dump($eventId);
-    // $getEventId->close();
-    // var_dump($getEventId);
-
-    // $address = $_GET['address'];
     $res = '';
-    
 }
 
 // var_dump($_SERVER['REQUEST_METHOD']);
@@ -50,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
 </head>
 
 <body>
@@ -59,12 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div id="input_pass_box" class="shadow2">
 
     <p>このイベントは<br />パスワードで保護されています</p>
-    <p><span>パスワードを入力してログインしてください</span></p>
+    <p><span>イベント作成時に設定したパスワードを<br />入力してログインしてください</span></p>
 
     <form action="<?php echo SITE_URL . 'master_login.php?address=' . $_SESSION['address'] ?>" method="post">
 
         <div id="input_pass" class="clearfix">
-            <input type="password" name="master_pass" id="" class="input_text" />
+            <input type="password" name="master_pass" id="" class="input_text" placeholder="パスワード" />
             <input type="submit" value="ログイン" class="btn_red" />
         </div><!--<input_pass>-->
 

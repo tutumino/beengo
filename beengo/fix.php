@@ -36,7 +36,7 @@ switch ($_POST['map_type']) {
         $map_type = '';
         break;
 }
-if (!($_POST['map_location'] == '' || $_POST['map_location'] == '住所、地名、駅名、建物名などを入力して地図を検索')) {
+if (!($_POST['map_location'] == '')) {
     $map_location = $_POST['map_location'];
 } else {
     $map_location = '';

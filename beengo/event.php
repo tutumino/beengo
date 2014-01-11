@@ -47,6 +47,7 @@ if ($event['flag_fixed'] == 1) {
 // DB接続解除
 $manageEvent->close();
 // var_dump($_SESSION['address'])
+// var_dump($event['map_type']);
 
 ?>
 
@@ -58,8 +59,8 @@ $manageEvent->close();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
-    <script type="text/javascript" src="js/input_sample.js"></script>
-    <script type="text/javascript" src="js/validate_event.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
 <?php 
     if ($event['flag_fixed'] == 1) {
         echo '<script type="text/javascript"
@@ -67,18 +68,6 @@ $manageEvent->close();
         echo '<script type="text/javascript" src="js/googlemaps.js"></script>';
     }
  ?>
-
-    <script>
-
-// 「あなたのお名前」サンプルテキスト
-var menberNameSample = 'あなたのお名前（必須）';
-inputSample('#member_name', menberNameSample);
-
-// 「コメント」サンプルテキスト
-var commentSample = '備考、<?php echo $event['master_name'] ?>さんへのメッセージなど';
-inputSample('#comment', commentSample);
-
-    </script>
 
 </head>
 
@@ -158,12 +147,12 @@ inputSample('#comment', commentSample);
         </div><!--<input_answers_area>-->
 
         <div class="input_part">
-            <input type="text" name="member_name" id="member_name" class="input_text required" value="" />
+            <input type="text" name="member_name" id="member_name" class="input_text required count16" value="" placeholder="あなたのお名前（必須）" />
             <p class="input_note">本名フルネームを入力する必要はありませんが、<br /><?php echo $event['master_name'] ?>さんがあなただとわかるお名前を入力してあげてください。</p>
         </div>
 
         <div class="input_part">
-            <textarea name="comment" id="comment" class="textarea" rows="5" cols="40"></textarea>
+            <textarea name="comment" id="comment" class="textarea count512" rows="5" cols="40" placeholder="備考、<?php echo $event['master_name'] ?>さんへのメッセージなど"></textarea>
         </div>
         
         <div class="input_part">
@@ -201,10 +190,14 @@ inputSample('#comment', commentSample);
                 <p><?php echo nl2br($event['description']) ?></p>
             </div>
 
-            <p class="map_type"><?php echo $event['map_type'] ?>地図</p>
-            <input type="hidden" name="map_location" id="map_location" class="input_text" value="<?php echo $event['map_location'] ?>" onLoad="searchMap();" />
+            <?php if ($event['map_type'] != ''): ?>
 
-            <div id="googlemaps"></div>
+                <p class="map_type"><?php echo $event['map_type'] ?>地図</p>
+                <input type="hidden" name="map_location" id="map_location" class="input_text" value="<?php echo $event['map_location'] ?>" onLoad="searchMap();" />
+
+                <div id="googlemaps"></div>
+
+            <?php endif ?>
 
         </div><!--<invitation>-->
         

@@ -52,17 +52,13 @@ $manageEvent->close();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
-    <script type="text/javascript" src="js/input_sample.js"></script>
-    <script type="text/javascript" src="js/validate_master.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
     <script type="text/javascript"
             src="http://maps.google.com/maps/api/js?sensor=false&language=ja"></script>
     <script type="text/javascript" src="js/googlemaps.js"></script>
 
     <script>
-
-// パスワードサンプルテキスト
-var mapLocationSample = '住所、駅名、建物名などを入力して、表示させたい地図を検索';
-inputSample('#map_location', mapLocationSample);
 
 $(function() {
     $('#input_invitation').hide();
@@ -179,7 +175,7 @@ $(function() {
 
         <div class="input_part">
             <p class="input_note">イベント概要、コメントなどを入力してください。<br />変更を加えなければ、「イベントページ」作成時の文面が<br />そのまま挿入されます。</p>
-            <textarea name="description2" id="description2" cols="40" rows="10" class="textarea"><?php echo $event['description']; ?></textarea>
+            <textarea name="description2" id="description2" cols="40" rows="10" class="textarea count1280" placeholder="イベントの概要、詳細、コメントなど"><?php echo $event['description']; ?></textarea>
         </div>
 
         <div class="input_part" id="select_map_type">
@@ -198,7 +194,7 @@ $(function() {
         </div>
 
         <div id="search_map_btn" class="clearfix">
-            <input type="text" name="map_location" id="map_location" class="input_text" />
+            <input type="text" name="map_location" id="map_location" class="input_text count64" placeholder="住所、駅名、建物名などを入力して、表示させたい地図を検索" />
             <input type="button" value="検索" class="btn_red" onclick="searchMap();" />
         </div><!--<search_map_btn>-->
 

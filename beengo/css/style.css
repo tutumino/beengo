@@ -70,8 +70,8 @@ a:active {
     }
         #header h1 {
             background: url(../img/logo.png) no-repeat;
-            width: 230px;
-            height: 108px;
+            width: 210px;
+            height: 101px;
             text-indent: -9999px;
             position: relative;
             top: 13px;
@@ -268,7 +268,10 @@ a:active {
                 font-weight: bold;
                 color: #cc3344;
             }
-
+            .ime_off { /*safari、chromeでは効かない？*/
+                -ms-ime-mode: disabled;
+                ime-mode: disabled;
+            }
 
         #added_datetime_area {
             width: auto;
@@ -767,6 +770,8 @@ a:active {
                 padding: 4px 10px;
                 font-size: 14px;
                 font-weight: normal;
+                word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+                -ms-word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
             }
             #answers_table .radio_td {
                 text-align: center;
@@ -812,6 +817,8 @@ a:active {
                         font-size: 14px;
                         line-height: 1.4em;
                         text-align: right;
+                        word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+                        -ms-word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
                     }
                 #comments .comment_wrapper .comment_outer {
                     position: relative;
@@ -1042,10 +1049,13 @@ SNSシェア
 }
     #input_pass_box p {
         padding: 10px 0;
+        font-size: 15px;
+        line-height: 1.7em;
     }
         #input_pass_box p span {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.7em;
         }
     #input_pass_box #input_pass {
         width: 320px;
