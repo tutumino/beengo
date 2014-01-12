@@ -1,3 +1,11 @@
+<?php
+
+require_once('../config/config.php');
+require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
+
+?>
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -89,6 +97,11 @@ var timerID = setInterval(function() {
 </head>
 
 <body>
+
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 
 <?php include ('fb.php'); ?>
 

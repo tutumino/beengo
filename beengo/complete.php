@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 // require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
@@ -43,13 +44,17 @@ $manageEvent->close();
 </head>
 <body>
 
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 <?php include ('fb.php'); ?>
 
 <?php include ('header.php'); ?>
 
 <div id="complete_msg">
     <p>あなたの入力内容が送信されました。</p>
-    <p><?php echo $event['master_name'] ?>さんからの連絡をお待ちください。</p>
+    <p><?php echo h($event['master_name']) ?>さんからの連絡をお待ちください。</p>
     <p>ご利用、ありがとうございました。</p>
     <p><a href="<?php echo SITE_URL ?>">Beengoのトップページへ</a></p>
 </div><!--<complete_msg>-->

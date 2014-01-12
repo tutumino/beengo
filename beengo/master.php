@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
@@ -77,6 +78,10 @@ $(function() {
 <!-- <body onload="mapInit();"> -->
 <body>
 
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 <?php include ('header.php'); ?>
 
 <form action="fix.php" method="post">
@@ -89,7 +94,7 @@ $(function() {
                     <th class="radio_col"></th>
                     <th class="datetimes_col"></th>
                     <?php foreach ($registers as $value):  ?>
-                        <th class="answers_col"><?php echo $value['member_name'] . '<br />さん' ?></th>
+                        <th class="answers_col"><?php echo h($value['member_name']) . '<br />さん' ?></th>
                     <?php endforeach ?>
                 </tr>
             <?php for ($i = 0; $i < count($datetimes); $i++): ?>
@@ -153,13 +158,13 @@ $(function() {
 
                 <div class="member_name clearfix">
                     <p>
-                        <?php echo $registers[$i]['member_name'] . '<br />さん' ?>
+                        <?php echo h($registers[$i]['member_name']) . '<br />さん' ?>
                     </p>
                 </div><!--<member_name>-->
 
                 <div class="comment_outer clearfix">
                     <div class="comment">
-                        <?php echo nl2br($registers[$i]['comment']) ?>
+                        <?php echo nl2br(h($registers[$i]['comment'])) ?>
                     </div><!--<comment>-->
                 </div><!--<comment_outer>-->
 

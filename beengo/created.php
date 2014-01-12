@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/ManageEvent.php');
 
@@ -40,16 +41,20 @@ $(function() {
 
 <body>
 
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 <?php include ('fb.php'); ?>
 
 <?php include ('header.php'); ?>
 
 <div id="created_msg">
     <p>イベントページが作成されました！</p>
-    <p><span>イベント名：<?php echo $res['title'] ?></span></p>
+    <p><span>イベント名：<?php echo h($res['title']) ?></span></p>
 <?php
     if ($res['pass'] != '') {
-        echo '<p><span>パスワード：' . $res['pass'] . '</span></p>';
+        echo '<p><span>パスワード：' . h($res['pass']) . '</span></p>';
     }
 ?>
 </div><!--<created_msg>-->

@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/RandUnqStr.php');
 require_once('classes/CreateEvent.php');

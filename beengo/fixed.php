@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
@@ -61,12 +62,16 @@ $(function() {
 
 <body>
 
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 <?php include ('fb.php'); ?>
 
 <?php include ('header.php'); ?>
 
 <div id="fixed_msg">
-    <p><span>「<?php echo $event['title'] ?>」</span>のイベントページが更新されました！</p>
+    <p><span>「<?php echo h($event['title']) ?>」</span>のイベントページが更新されました！</p>
     <p>日時は<span><?php echo $fixed['year'] . '年' . $fixed['month'] . '月' . $fixed['date'] . '日' . $fixed['day'] . $fixed['time'] ?></span>に決定しました。</p>
 </div><!--<fixed_msg>-->
 

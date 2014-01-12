@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
+require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
@@ -73,6 +74,10 @@ $manageEvent->close();
 
 <body <?php if ($event['flag_fixed'] == 1) {echo 'onLoad=mapInit();searchMap();';} ?>>
 
+<noscript>
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+</noscript>
+
 <?php include ('header.php'); ?>
 
 <?php if ($event['flag_fixed'] == 0): ?>
@@ -86,15 +91,15 @@ $manageEvent->close();
 
 
             <div id="master_name_area">
-                <p><span><?php echo $event['master_name'] ?>さん</span>からの、日程調整のご案内です。<br />あなたのご都合を送信してください。</p>
+                <p><span><?php echo h($event['master_name']) ?>さん</span>からの、日程調整のご案内です。<br />あなたのご都合を送信してください。</p>
             </div>           
 
             <div id="title_area">
-                <h2><?php echo $event['title'] ?></h2>
+                <h2><?php echo h($event['title']) ?></h2>
             </div> 
 
             <div id="description_area">
-                <p><?php echo nl2br($event['description']) ?></p>
+                <p><?php echo nl2br(h($event['description'])) ?></p>
             </div>
 
         </div><!--<invitation>-->
@@ -152,7 +157,7 @@ $manageEvent->close();
         </div>
 
         <div class="input_part">
-            <textarea name="comment" id="comment" class="textarea count512" rows="5" cols="40" placeholder="備考、<?php echo $event['master_name'] ?>さんへのメッセージなど"></textarea>
+            <textarea name="comment" id="comment" class="textarea count512" rows="5" cols="40" placeholder="備考、<?php echo h($event['master_name']) ?>さんへのメッセージなど"></textarea>
         </div>
         
         <div class="input_part">
@@ -171,11 +176,11 @@ $manageEvent->close();
             </div>
 
             <div id="master_name_area">
-                <p><span><?php echo $event['master_name'] ?>さん</span>より、<br />イベント日時決定のご案内です。</p>
+                <p><span><?php echo h($event['master_name']) ?>さん</span>より、<br />イベント日時決定のご案内です。</p>
             </div>           
 
             <div id="title_area">
-                <h2><?php echo $event['title'] ?></h2>
+                <h2><?php echo h($event['title']) ?></h2>
             </div>
 
             <div id="fixed_datetime_area">
@@ -187,13 +192,13 @@ $manageEvent->close();
             </div>
 
             <div id="description_area">
-                <p><?php echo nl2br($event['description']) ?></p>
+                <p><?php echo nl2br(h($event['description'])) ?></p>
             </div>
 
             <?php if ($event['map_type'] != ''): ?>
 
                 <p class="map_type"><?php echo $event['map_type'] ?>地図</p>
-                <input type="hidden" name="map_location" id="map_location" class="input_text" value="<?php echo $event['map_location'] ?>" onLoad="searchMap();" />
+                <input type="hidden" name="map_location" id="map_location" class="input_text" value="<?php echo h($event['map_location']) ?>" onLoad="searchMap();" />
 
                 <div id="googlemaps"></div>
 
