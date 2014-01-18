@@ -21,7 +21,7 @@ $event = $event->fetch(PDO::FETCH_ASSOC);
 // var_dump($event);
 
 if ($event['flag_fixed'] == 1) {
-    header('Location: ' . SITE_URL . 'fixed.php?address=' . $_SESSION['address']);
+    header('Location: ' . SITE_URL . 'fixed?address=' . $_SESSION['address']);
 }
 
 if ($event['master_pass'] != '') {
@@ -48,10 +48,11 @@ $manageEvent->close();
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
@@ -79,12 +80,12 @@ $(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
 </noscript>
 
 <?php include ('header.php'); ?>
 
-<form action="fix.php" method="post">
+<form action="fix" method="post">
 
     <div id="answers_table_area">
         <table id="answers_table">
@@ -199,7 +200,7 @@ $(function() {
         </div>
 
         <div id="search_map_btn" class="clearfix">
-            <input type="text" name="map_location" id="map_location" class="input_text count64" placeholder="住所、駅名、建物名などを入力して、表示させたい地図を検索" />
+            <input type="text" name="map_location" id="map_location" class="input_text count64" placeholder="住所、駅名、建物名などで地図を検索" />
             <input type="button" value="検索" class="btn_red" onclick="searchMap();" />
         </div><!--<search_map_btn>-->
 

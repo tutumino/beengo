@@ -22,14 +22,14 @@ a {
 a:visited {
     color: #dd7711;
 }
-a:hover {
+/*a:hover {
     color: #eebb77;
     text-decoration: underline;
 }
 a:active {
     color: #eebb77;
     text-decoration: underline;
-}
+}*/
 .clearfix:after {
   content: ".";  /* 新しい要素を作る */
   display: block;  /* ブロックレベル要素に */
@@ -62,19 +62,20 @@ a:active {
     /*background: #eff0e6;*/
 }
     #header {
-        width: 1000px;
-        height: 39px;
-        margin: 0 auto 100px auto;
+        width: 100%;
+        /*height: 39px;*/
+        margin: 0 auto 20px auto;
         position: relative;
         overflow: visible;
     }
         #header h1 {
-            background: url(../img/logo.png) no-repeat;
-            width: 210px;
-            height: 101px;
+            background: url(../img/logo_smart.png) no-repeat;
+            width: 122px;
+            height: 70px;
             text-indent: -9999px;
             position: relative;
             top: 13px;
+            left: 10px;
         }
         #gmenu {
             position: absolute;
@@ -82,6 +83,7 @@ a:active {
             right: 0;
             color: #3d3d3d;
             font-size: 15px;
+            display: none;
         }
             #gmenu li {
                 float: left;
@@ -99,16 +101,14 @@ a:active {
                 color: #3d3d3d;
                 text-decoration: none;
             }
-            #gmenu li a:hover {
-                /*color: #ffffff;*/
+/*            #gmenu li a:hover {
                 text-decoration: none;
-                /*background: #ee9944;*/
                 border-bottom: 3px solid #ee9944;
             }
             #gmenu li a:active {
                 color: #3d3d3d;
                 text-decoration: none;
-            }
+            }*/
 
 /************************************************
 トップページ　トップエリア
@@ -119,27 +119,29 @@ a:active {
     padding: 10px 0 60px 0;
 }
     #top {
-        width: 1000px;
+        width: 100%;
         margin: 0 auto;
         position: relative;
     }
         #top #catch {
-            float: left;
             text-align: left;
             margin-top: 10px;
+            padding: 0 15px;
         }
             #top #catch h2 {
-                font-size: 29px;
-                letter-spacing: 0.1em;
-                line-height: 1.7em;
+                font-size: 22px;
+                line-height: 1.5em;
                 /*font-weight: bold;*/
                 margin-bottom: 5px;
                 color: #5f5f5f;
             }
             #top #immediately {
-                font-size: 23px;
+                font-size: 24px;
                 margin-bottom: 20px;
             }
+                #top #immediately a {
+                    /*font-weight: bold;*/
+                }
             #top #sns {
                 /*float: right;*/
                 /*margin-top: 20px;*/
@@ -150,6 +152,7 @@ a:active {
             float: right;
             margin-top: -30px;
             overflow: hidden;
+            display: none;
         }
             #captures_wrapper {
                 width: 2000px;
@@ -159,32 +162,32 @@ a:active {
                     margin: 0;
                 }
         #appeal_boxes {
-            clear: both;
+            /*clear: both;*/
         }
             #top .appeal_box {
-                float: left;
-                width: 324px;
-                min-height: 464px;
+                width: 100%;
+                /*min-height: 464px;*/
                 background: #ffffff;
                 /*padding: 20px;*/
                 text-align: left;
-                margin-right: 14px;
-            }
-            #top .appeal_box:nth-child(3n) {
-                margin-right: 0;
+                padding-bottom: 15px;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
             }
                 #top .appeal_box h3 {
                     font-size: 22px;
                     font-weight: bold;
                     letter-spacing: 0.1em;
-                    padding: 17px 23px;
+                    padding: 12px 15px;
+                    line-height: 1.4em;
                     /*margin-bottom: 10px;*/
                     background: #cc3344;
                     color: #ffffff;
                 }
                 #top .appeal_box p {
                     font-size: 15px;
-                    padding: 12px 23px 0 23px;
+                    padding: 12px 15px 0 15px;
                 }
                 #top .appeal_box p + p {
                     padding-top: 0;
@@ -196,7 +199,7 @@ a:active {
 *************************************************/
 #create_event_area {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 10px;
     font-size: 16px;
 }
     #create_event_h {
@@ -205,36 +208,53 @@ a:active {
         margin-bottom: 40px;
     }
         #create_event_h h3 {
-            padding: 25px 0 10px 0;
-            font-size: 33px;
-            letter-spacing: 0.1em;
+            padding: 13px 15px 0 15px;
+            font-size: 21px;
             color: #ffffff;
+            font-weight: bold;
         }
         #create_event_h p {
-            font-size: 16px;
+            font-size: 14px;
             color: #ffffff;
-            padding-bottom: 25px;
+            padding: 15px 15px;
         }
         .input_part {
-            margin: 0 0 30px 0;
+            margin: 0 0 20px 0;
         }
             .input_text {
-                width: 500px;
-                /*height: 40px;*/
+                width: 95%;
                 border: 1px solid #cc3344;
-                padding: 12px 13px;
+                padding: 8px 13px;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                -o-border-radius: 0;
+                -ms-border-radius: 0;
+                border-radius: 0;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                -webkit-appearance:none; /*これで影が消える*/
             }
             .textarea {
-                width: 500px;
+                width: 95%;
                 border: 1px solid #cc3344;
-                padding: 10px 16px;
-                line-height: 1.6em;
+                padding: 8px 13px;
+                line-height: 1.5em;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                -o-border-radius: 0;
+                -ms-border-radius: 0;
+                border-radius: 0;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                -webkit-appearance:none; /*これで影が消える*/
             }
             #required_time {
                 -webkit-appearance: button;
                 -moz-appearance: button;
                 appearance: button;
-                width: 500px;
+                width: 95%;
                 padding: 9px 30px;
                 border: 1px solid #cc3344;
                 -moz-border-radius: 0;
@@ -245,7 +265,7 @@ a:active {
                 cursor: pointer;
                 /*text-align: center;*/
                 background: url(../img/select_s.png) no-repeat;
-                background-position: 450px 13px;
+                background-position: 95% 50%;
                 background-color: #ffffff;
             }
             .input_title {
@@ -254,14 +274,15 @@ a:active {
             }
             .input_note {
                 font-size: 14px;
-                font-weight: bold;
-                width: 500px;
+                /*font-weight: bold;*/
+                width: 100%;
                 line-height: 1.6em;
                 margin: 3px auto;
+                padding: 5px 15px;
                 /*color: #cc3344;*/
             }
             .input_note + .input_note {
-                margin-top: 15px;
+                padding-top: 5px;
             }
             .err_msg {
                 font-size: 14px;
@@ -274,35 +295,37 @@ a:active {
             }
 
         #added_datetime_area {
-            width: auto;
+            width: 95%;
             min-height: 200px;
-            height: auto !important; /*IE対策？*/
-            height: 200px;　/*IE対策？*/
             text-align: center;
+            margin: 0 auto;
         }
             #added_datetime_table {
                 margin: 10px auto 30px auto;
-                width: 540px;
+                width: 95%;
                 border-collapse: collapse;
             }
                 .added_datetime {
-                    font-size: 24px;
+                    font-size: 16px;
+                    padding: 7px 0;
                 }
                     .added_datetime .year {
-                        font-size: 16px;
+                        font-size: 11px;
                         color: #666666;
-                        margin: 0 5px 0 20px;
+                        margin: 0 3px 0 0;
                     }
                 .del_btn {
+                    width: 64px;
                     text-align: center;
-                    font-size: 16px;
+                    font-size: 12px;
                     color: #dd7711;
+                    line-height: 1.3em;
                     cursor: pointer;
                 }
-                .del_btn:hover {
+                /*.del_btn:hover {
                     color: #eebb77;
                     text-decoration: underline;
-                }
+                }*/
                 .del_btn:active {
                     color: #eebb77;
                     text-decoration: underline;
@@ -318,56 +341,54 @@ a:active {
 カレンダー
 *************************************************/
 #cal_switch_btn_area {
-    width: 210px;
+    width: 60%;
     text-align: center;
     margin: 20px auto 10px auto;
 }
     #pre_month_btn {
         float: left;
-        font-size: 17px;
+        font-size: 15px;
         color: #cc3344;
-        margin: 3px 5px 3px 5px;
-        cursor: pointer;
+        margin: 3px 7px;
         text-decoration: underline;
         user-select: none; /* CSS3 */
         -moz-user-select: none; /* Firefox */
         -webkit-user-select: none; /* Safari、Chromeなど */
         -ms-user-select: none; /* IE10かららしい */
         unselectable="on"; /* IE */
+        cursor: pointer;
     }
-        #pre_month_btn:hover {
+        /*#pre_month_btn:hover {
             color: #dd7788;
-        }
+        }*/
     #nxt_month_btn {
         float: right;
-        font-size: 17px;
+        font-size: 15px;
         color: #cc3344;
-        margin: 3px 5px 3px 5px;
-        cursor: pointer;
+        margin: 3px 7px;
         text-decoration: underline;
         user-select: none; /* CSS3 */
         -moz-user-select: none; /* Firefox */
         -webkit-user-select: none; /* Safari、Chromeなど */
         -ms-user-select: none; /* IE10かららしい */
         unselectable="on"; /* IE */
+        cursor: pointer;
     }
-        #nxt_month_btn:hover {
+        /*#nxt_month_btn:hover {
             color: #dd7788;
-        }
+        }*/
 #insert_cal_area {
     margin: 0 auto;
     text-align: center;
-    width: 860px;
-    min-height: 260px;
-    height: auto !important; /*IE対策？*/
-    height: 260px;　/*IE対策？*/
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
 }
 #insert_cal_area table {
-    width: 280px;
-    margin: 0 3px 0 3px;
+    width: 290px;
+    margin: 0 auto 100px auto;
     border-collapse: collapse;
     border: none;
-    float: left;
     box-shadow: 0px 0px 6px #999999;
     -moz-box-shadow: 0px 0px 6px #999999;
     -webkit-box-shadow: 0px 0px 6px #999999;
@@ -408,18 +429,18 @@ a:active {
             background: #ffffff;
             cursor: pointer;
         }
-        .cal_off:hover {
+        /*.cal_off:hover {
             background: #eeeeee;
             cursor: pointer;
-        }
+        }*/
         .cal_on {
             background: #ee9944;
             cursor: pointer;
         }
-        .cal_on:hover {
+        /*.cal_on:hover {
             background: #ee9944;
             cursor: pointer;
-        }
+        }*/
         .cal_added {
             background: #fbe5d0;
             cursor: pointer;
@@ -429,40 +450,36 @@ a:active {
 時間指定
 *************************************************/
 #time_select_area {
-    width: 835px;
-    margin: 0 auto 0 auto;
+    width: 95%;
+    margin: 0 auto;
 }
     .time_select {
-        width: 190px;
+        width: 43%;
         text-align: center;
         float: left;
-        margin-right: 25px;
-    }
-    .time_select:nth-child(4) {
-        margin-right: 0;
+        margin: 0 10px;
     }
         .time_select select {
             -webkit-appearance: button;
             -moz-appearance: button;
             appearance: button;
-            width: 80px;
-            padding: 7px 10px;
+            width: 43%;
+            padding: 5px 8px;
             border: 1px solid #cc3344;
             -moz-border-radius: 0px;
             -webkit-border-radius: 0px;
             -o-border-radius: 0px;
             -ms-border-radius: 0px;
             border-radius: 0px;
-            cursor: pointer;
             background: url(../img/select_s.png) no-repeat;
-            background-position: 50px 8px;
+            background-position: 95% 55%;
             background-color: #ffffff;
         }
         .time_select select[disabled] {
             color: #cccccc;
             border-color: #f3ced2;
             background: url(../img/select_s_disabled.png) no-repeat;
-            background-position: 50px 8px;
+            background-position: 95% 55%;
             background-color: #ffffff;
         }
         .colon {
@@ -540,19 +557,23 @@ a:active {
 イベントページ
 *************************************************/
 #invitation_outer {
-    width: 682px;
+    width: 97%;
     margin: 0 auto;
     padding: 6px;
     position: relative;
     overflow: hidden;
 }
     .ribbon {
-        width: 195px;
-        height: 43px;
+        /*width: 195px;*/
+        width: 150px;
+        /*height: 43px;*/
+        height: 33px;
         position: absolute;
         text-align: center;
-        top: 25px;
-        right: -51px;
+        /*top: 25px;*/
+        top: 14px;
+        /*right: -51px;*/
+        right: -40px;
         z-index: 1;
         background: #cc3344;
         -webkit-transform: rotate(45deg);
@@ -563,17 +584,18 @@ a:active {
         .ribbon p {
             /*display: inline-block;*/
             font-weight: bold;
-            font-size: 20px;
-            padding-top: 5px;
+            font-size: 15px;
+            padding-top: 2px;
             color: #932531;
+            text-indent: 10px;
         }
     .ribbon:before {
         content: "";
         width: 0;
         height: 0;
         position: absolute;
-        top: 37px;
-        right: 179px;
+        top: 27px;
+        right: 129px;
         z-index: -1;
         border: 6px solid;
         border-color: transparent transparent #932531 transparent;
@@ -587,8 +609,8 @@ a:active {
         width: 0;
         height: 0;
         position: absolute;
-        top: 37px;
-        right: 4px;
+        top: 27px;
+        right: 3px;
         z-index: -1;
         border: 6px solid;
         border-color: transparent transparent transparent #932531;
@@ -598,7 +620,8 @@ a:active {
         -ms-transform: rotate(-45deg);
     }
     #invitation {
-        width: 670px;
+        width: 100%;
+        margin: 0 auto;
         background: #ffffff;
         padding-bottom: 30px;
         /*background: url(../img/invitation_bg.jpg);*/
@@ -606,31 +629,32 @@ a:active {
         #master_name_area {
             width: 100%;
             text-align: left;
-            margin-bottom: 30px;
-            padding: 20px 50px 20px 50px;
+            margin-bottom: 15px;
+            padding: 20px 20px 20px 20px;
             background: #fafafa;
             border-top: 4px solid #ee9944;
             border-bottom: 1px solid #e0e0e0;
             
         }
             #master_name_area p {
-                font-size: 14px;
-                line-height: 1.7em;
+                font-size: 13px;
+                line-height: 1.6em;
+                width: 87%;
             }
                 #master_name_area p span {
                     font-weight: bold;
-                    font-size: 17px;
+                    font-size: 14px;
                     margin-right: 3px;
                 }
         #title_area {
             width: 100%;
             text-align: center;
-            margin-bottom: 10px;
-            padding: 20px 50px;
+            /*margin-bottom: 10px;*/
+            padding: 10px 20px;
         }
             #title_area h2 {
-                font-size: 33px;
-                letter-spacing: 0.1em;
+                font-size: 25px;
+                /*letter-spacing: 0.1em;*/
                 line-height: 1.5em;
             }
         #fixed_datetime_area {
@@ -638,71 +662,85 @@ a:active {
             text-align: center;
             margin-bottom: 10px;
         }
-            #fixed_datetime_area span {
-                font-size: 24px;
-                margin-left: 3px;
+            #fixed_datetime_area p {
+                font-size: 14px;
             }
+                #fixed_datetime_area span:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+                #fixed_datetime_area span {
+                    font-size: 20px;
+                    margin-left: 3px;
+                }
         #description_area {
             width: 100%;
             text-align: left;
-            margin: 0 auto 30px auto;
-            padding: 20px 50px;
+            margin: 0 auto 0 auto;
+            padding: 10px 20px;
         }
             #description_area p {
+                font-size: 14px;
                 line-height: 1.7em;
             }
-        .map_type {
+        #invitation .map_type {
+            width: 100%;
             text-align: center;
             /*padding: 0 0 10px 0;*/
-            font-size: 27px;
+            font-size: 18px;
             letter-spacing: 0.2em;
             /*font-weight: bold;*/
             /*margin: 20px 0;*/
         }
         #invitation #googlemaps {
-            width: 564px;
-            height: 400px;
-            margin: 0 auto 30px auto;
+            width: 92%;
+            height: 280px;
+            margin: 0 auto 20px auto;
             border: 5px solid #cc3344;
         }
 #required_time_area {
-    width: 600px;
+    width: 100%;
     text-align: center;
     margin: 0 auto 30px auto;
 }
     #required_time_area p {
-        font-size: 19px;
+        font-size: 15px;
     }
         #required_time_area p span {
             font-weight: bold;
         }
 .input_note_L {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 20px auto;
-    color: #cc3344;
-}
-.input_note_S {
-    font-size: 12px;
+    width: 95%;
+    font-size: 14px;
     font-weight: bold;
     margin: 20px auto;
     color: #cc3344;
     line-height: 1.6em;
 }
+.input_note_S {
+    width: 95%;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 13px auto;
+    color: #cc3344;
+    line-height: 1.6em;
+}
 #input_answers_area {
-    width: 600px;
+    width: 95%;
     text-align: center;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 20px auto;
 }
     .input_answer_box {
-        width: 600px;
+        width: 100%;
         text-align: center;
         margin: 0 auto 0 auto;
         padding: 15px 0;
         border-bottom: 1px solid #ee9944;
     }
         .datetime_box {
-            float: right;
+            /*float: right;*/
+            width: 100%;
+            margin-bottom: 5px;
         }
             .datetime_box p {
                 font-size: 25px;
@@ -716,19 +754,20 @@ a:active {
         .answer_radio_box {
             width: 97px;
             float: left;
+            line-height: 1.2em;
         }
             .answer_radio_box label {
                 font-size: 14px;
-                line-height: 1.1em;
+                line-height: 1.2em;
             }
 
 /************************************************
 イベントマスターページ
 *************************************************/
 #answers_table_area {
-    width: 90%;
+    width: 95%;
     overflow: scroll;
-    margin: 0 auto 30px auto;
+    margin: 30px auto 30px auto;
 }
     #answers_table {
         border-collapse: collapse;
@@ -754,17 +793,18 @@ a:active {
                 max-width: 40px;
             }
             #answers_table .datetimes_col {
-                width: 170px;
-                min-width: 170px;
-                max-width: 170px;
+                width: 115px;
+                min-width: 115px;
+                max-width: 115px;
             }
             #answers_table .answers_col {
-                width: 76px;
-                min-width: 76px;
-                max-width: 76px;
+                width: 55px;
+                min-width: 55px;
+                max-width: 55px;
                 text-align: center;
-                padding: 4px 10px;
-                font-size: 14px;
+                padding: 4px 2px;
+                font-size: 12px;
+                line-height: 1.3em;
                 font-weight: normal;
                 word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
                 -ms-word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
@@ -774,17 +814,24 @@ a:active {
             }
             #answers_table .datetime_td {
                 text-align: center;
+                line-height: 16px;
+                padding: 1px 0;
+                font-size: 14px;
             }
                 #answers_table .datetime_td .year {
-                    font-size: 12px;
-                    margin-right: 5px;
+                    font-size: 9px;
+                    line-height: 9px;
                 }
+                #answers_table .datetime_td .year:after {
+                    content: "\A";
+                    white-space: pre;
+                } /*改行を挿入*/
             #answers_table .answer_td {
                 text-align: center;
-                /*border-bottom-width: 2px;
-                border-bottom-color: #aaaaaa;
-                border-bottom-style: dashed;*/
             }
+                #answers_table .answer_td img {
+                    padding-top: 3px;
+                }
             #answers_table .level1 {
                 background: #f1c6cb;
             }
@@ -793,24 +840,24 @@ a:active {
             }
 
         #comments {
-            width: 100%;
-            margin: 0 0 40px 0;
+            width: 95%;
+            margin: 0 auto 40px auto;
         }
             /*吹き出し*/
             #comments .comment_wrapper {
-                width: 620px;
+                width: 100%;
                 margin: 0 auto;
                 padding: 6px 0;
 
             }
                 #comments .comment_wrapper .member_name {
                     float: left;
-                    padding: 0 0 0 0;
-                    width: 70px;
+                    padding: 0 25px 0 0;
+                    width: 27%;
                 }
                     #comments .comment_wrapper .member_name p {
                         float: right;
-                        font-size: 14px;
+                        font-size: 13px;
                         line-height: 1.4em;
                         text-align: right;
                         word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
@@ -823,7 +870,7 @@ a:active {
                         position: relative;
                         background: #ddaa11;
                         padding: 13px 20px;
-                        width: 510px;
+                        width: 73%;
                         text-align: left;
                         -moz-border-radius: 7px;
                         -webkit-border-radius: 7px;
@@ -838,52 +885,63 @@ a:active {
                         content: '';
                         position: absolute;
                         border-top: 0 solid transparent;
-                        border-right: 30px solid #ddaa11;
+                        border-right: 17px solid #ddaa11;
                         border-bottom: 12px solid transparent;
                         top: 10px;
-                        left: -30px;
+                        left: -17px;
                     }
 
     #create_invitation_btn {
         margin: 0 auto 40px auto;
+        width: 95%;
+        line-height: 1.2em;
     }
         #create_invitation_btn a{
             cursor: pointer;
+            font-size: 13px;
             font-weight: bold;
         }
 
     #input_invitation {
-        width: 700px;
+        width: 95%;
         margin: 0 auto;
         text-align: center;
     }
         #description2 {
-            width: 600px;
+            width: 100%;
         }
         #select_map_type {
-            width: 325px;
+            width: 95%;
             text-align: left;
             margin: 0 auto 20px auto;
         }
+            #select_map_type label {
+                font-size: 14px;
+            }
         #search_map_btn {
-            width: 600px;
+            width: 100%;
             margin: 0 auto 15px auto;
         }
             #search_map_btn input[type="text"] {
-                width: 530px;
+                width: 85%;
+                height: 36px;
                 float: left;
+                margin: 0;
+                font-size: 13px;
+                padding: 6px;
                 margin: 0;
             }
             #search_map_btn input[type="button"] {
-                width: 70px;
-                height: 44px;
+                width: 15%;
+                height: 36px;
                 float: right;
                 padding: 0;
                 margin: 0;
+                font-size: 12px;
             }
         #input_invitation #googlemaps {
-            width: 600px;
-            height: 400px;
+            width: 100%;
+            height: 300px;
             margin: 0 auto 30px auto;
             border: 5px solid #cc3344;
         }
@@ -892,34 +950,35 @@ a:active {
 createdページ　fixedページ
 *************************************************/
 #created_wrapper {
-    width: 580px;
-    margin: 0 auto;
+    width: 95%;
+    margin: 0 auto 30px auto;
     background: #ffffff;
-    padding: 40px 0;
+    padding: 25px 0;
     border-top: #cc3344 solid 3px;
     /*margin-bottom: 40px;*/
 }
     #created_msg {
-        width: 500px;
+        width: 95%;
         margin: 0 auto;
     }
         #created_msg span {
             font-weight: bold;
         }
     .this_is_the_URL {
-        width: 500px;
+        width: 95%;
         margin: 20px auto;
     }
         .this_is_the_URL span {
             font-weight: bold;
         }
-        .this_is_the_URL input[type="text"] {
-            width: 500px;
-            margin: 10px auto;
-            font-size: 21px;
+        .this_is_the_URL input {
+            display: none;
         }
         #event_url_s {
-            display: none;
+            display: block;
+            font-size: 12px;
+            padding: 4px 2px;
+            border: #cc3344 solid 1px;
         }
     #event_shere_way {
         /*margin: 0 auto 0 auto;*/
@@ -930,7 +989,7 @@ createdページ　fixedページ
         padding: 10px 0;
     }
         #shere_way_btn_wrapper {
-            width: 250px;
+            width: 95%;
             margin: 0 auto;
         }
             #shere_way_send_mail {
@@ -942,14 +1001,15 @@ createdページ　fixedページ
                 -o-border-radius: 3px;
                 -ms-border-radius: 3px;
                 border-radius: 3px;
-                float: left;
+                margin: 0 auto 10px auto;
+                /*float: left;*/
             }
-            #shere_way_send_mail:hover {
+            /*#shere_way_send_mail:hover {
                 background: #bb3344;
                 box-shadow: none;
                 -moz-box-shadow: none;
                 -webkit-box-shadow: none;
-            }
+            }*/
                 #shere_way_send_mail a {
                     display: block;
                     width: 100%;
@@ -968,20 +1028,20 @@ createdページ　fixedページ
                 }
             #shere_way_line {
                 width: 90px;
-                float: left;
-                display: none;
+                margin: 0 auto 5px auto;
             }
             #shere_way_facebook {
-                width: 90px;
-                float: left;
+                display: none;
+                /*width: 90px;*/
+                /*margin: 0 auto 10px auto;*/
             }
             #shere_way_google {
                 width: 90px;
-                float: left;
-                margin-left: -20px;
+                margin: 0 auto;
+                /*margin-left: -20px;*/
             }
     #master_url {
-        font-size: 20px;
+        font-size: 12px;
         /*margin-bottom: 200px;*/
     }
 
@@ -990,18 +1050,21 @@ createdページ　fixedページ
 completeページ
 *************************************************/
 #complete_msg {
-    width: 500px;
-    margin: 20px auto 50px auto;
+    width: 95%;
+    margin: 50px auto 30px auto;
 }
+    #complete_msg p {
+        font-size: 14px;
+    }
 
  
 /************************************************
 SNSシェア
 *************************************************/ 
 #shere_msg {
-    width: 500px;
+    width: 95%;
     margin: 0 auto 20px auto;
-    padding: 20px 0 0 0;
+    /*padding: 20px 0 0 0;*/
 }
     #shere_msg p {
         font-size: 13px;
@@ -1009,25 +1072,28 @@ SNSシェア
         line-height: 1.7em;
     }
 #sns {
-    width: 365px;
+    width: 95%;
     /*margin: 0 auto;*/
     text-align: left;
     margin-bottom: 20px;
 }
     #sns #btn_facebook {
-        /*margin-bottom: 10px;*/
+        margin-bottom: -5px;
     }
     #sns #btn_twitter {
-        margin-bottom: 6px;
+        margin-bottom: 3px;
+        clear: both;
         float: left;
     }
     #sns #btn_google {
         margin-bottom: 6px;
+        clear: both;
         float: left;
-        margin-top: -3px;
+        margin-bottom: 5px;
     }
     #sns #btn_line {
-
+        clear: both;
+        float: left;
     }
 
 #shere_msg #sns {
@@ -1039,7 +1105,7 @@ SNSシェア
 パスワード入力画面
 *************************************************/
 #input_pass_box {
-    width: 410px;
+    width: 75%;
     margin: 0 auto;
     position: relative;
     top: 10px;
@@ -1050,31 +1116,34 @@ SNSシェア
 }
     #input_pass_box p {
         padding: 10px 0;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.7em;
+        width: 90%;
+        margin: 0 auto;
     }
         #input_pass_box p span {
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.7em;
         }
     #input_pass_box #input_pass {
-        width: 320px;
+        width: 90%;
         margin: 0 auto 0 auto;
         padding: 10px 0 0 0;
     }
         #input_pass_box #input_pass input[type="password"] {
-            width: 250px;
+            width: 75%;
+            height: 34px;
             float: left;
             margin: 0;
-            padding: 10px;
+            padding: 7px 10px;
         }
         #input_pass_box #input_pass input[type="submit"] {
-            width: 70px;
-            height: 40px;
+            width: 25%;
+            height: 34px;
             float: right;
             padding: 0;
             margin: 0;
-            font-size: 13px;
+            font-size: 9px;
             font-weight: bold;
         }

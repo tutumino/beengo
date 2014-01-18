@@ -1,7 +1,7 @@
 <div id="sns" class="clearfix">
 
     <div id="btn_facebook">
-        <div class="fb-like" data-href="http://beengo.cc" data-width="365" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-like" data-href="http://beengo.cc" data-width="290" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div><!--<btn_facebook>-->
 
     <div id="btn_twitter">

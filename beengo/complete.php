@@ -36,16 +36,17 @@ $manageEvent->close();
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
 </head>
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
 </noscript>
 
 <?php include ('fb.php'); ?>

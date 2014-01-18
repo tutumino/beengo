@@ -9,11 +9,12 @@ require_once('funcs/funcs.php');
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
     <title></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/import.css" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/cal.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>

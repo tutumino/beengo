@@ -55,10 +55,11 @@ $manageEvent->close();
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
@@ -75,7 +76,7 @@ $manageEvent->close();
 <body <?php if ($event['flag_fixed'] == 1) {echo 'onLoad=mapInit();searchMap();';} ?>>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
 </noscript>
 
 <?php include ('header.php'); ?>
@@ -114,7 +115,7 @@ $manageEvent->close();
 
     <p class="input_note_L">以下の日時候補に対して、あなたのご都合を選択してください。</p>
 
-    <form action="register.php" method="post">
+    <form action="register" method="post">
 
         <div id="input_answers_area">
         

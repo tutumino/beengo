@@ -53,4 +53,4 @@ $manageEvent = new ManageEvent($_SESSION['event_id']);
 $manageEvent->fix($fix, $description2, $map_type, $map_location);
 
 
-header('Location: ' . SITE_URL . 'fixed.php?address=' . $_SESSION['address']);
+header('Location: ' . SITE_URL . 'fixed?address=' . $_SESSION['address']);

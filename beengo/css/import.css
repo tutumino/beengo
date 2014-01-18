@@ -1,0 +1,2 @@
+@import url(style.css) screen and (min-width: 641px); /* 641以上 */
+@import url(smart.css) screen and (max-width: 640px); /* 640以下 */

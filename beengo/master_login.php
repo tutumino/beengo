@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['master_pass'] = $_POST['master_pass'];
         // $_SESSION['address'] = $_POST['address'];
         $_SESSION['master_login'] = 'ok';
-        header('Location: ' . SITE_URL . 'master.php?address=' . $_SESSION['address']);
+        header('Location: ' . SITE_URL . 'master?address=' . $_SESSION['address']);
     }
 }
 
@@ -36,10 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
 </head>
@@ -47,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
 </noscript>
 
 <?php include ('header.php'); ?>
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p>このイベントは<br />パスワードで保護されています</p>
     <p><span>イベント作成時に設定したパスワードを<br />入力してログインしてください</span></p>
 
-    <form action="<?php echo SITE_URL . 'master_login.php?address=' . $_SESSION['address'] ?>" method="post">
+    <form action="<?php echo SITE_URL . 'master_login?address=' . $_SESSION['address'] ?>" method="post">
 
         <div id="input_pass" class="clearfix">
             <input type="password" name="master_pass" id="" class="input_text" placeholder="パスワード" />
