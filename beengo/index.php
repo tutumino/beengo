@@ -11,7 +11,7 @@ require_once('funcs/funcs.php');
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex,nofollow,noarchive" />
-    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,maximum-scale=1" />
     <title></title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/import.css" />
@@ -100,7 +100,7 @@ var timerID = setInterval(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
 </noscript>
 
 
