@@ -34,4 +34,4 @@ $_SESSION['member_id'] = $manageEvent->register($_POST['member_name'], $_POST['c
 // DB接続解除
 $manageEvent->close();
 
-header('Location: ' . SITE_URL . 'complete?address=' . $_SESSION['address'] . '&memberId=' . $_SESSION['member_id']);
+header('Location: ' . SITE_URL . 'complete.php?address=' . $_SESSION['address'] . '&memberId=' . $_SESSION['member_id']);

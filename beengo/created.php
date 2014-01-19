@@ -19,7 +19,7 @@ $res = $res->fetch(PDO::FETCH_ASSOC);
 // メール文の作成
 // $shortenedDesc = mb_substr($res['description'], 0, 120) . '……（詳細は下記URLにて）';
 $subject = "「{$res['title']}」日程調整のご案内";
-$body = "イベントページにアクセスして、あなたのご都合をお聞かせください。\n\n○イベントページURL\n" . SITE_URL . "event?address={$res['address']}\n\n";
+$body = "イベントページにアクセスして、あなたのご都合をお聞かせください。\n\n○イベントページURL\n" . SITE_URL . "event.php?address={$res['address']}\n\n";
 if ($res['pass'] != '') {
     $body .= "○パスワード\n{$res['pass']}\n\n";
 }
@@ -54,7 +54,7 @@ $(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('fb.php'); ?>
@@ -75,8 +75,8 @@ $(function() {
 
     <div class="this_is_the_URL">
         <p><span>イベントページのURLはこちら</span></p>
-        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event?address=' . $res['address'] ?>" />
-        <p id="event_url_s"><?php echo SITE_URL . 'event?address=' . $res['address'] ?></p>
+        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $res['address'] ?>" />
+        <p id="event_url_s"><?php echo SITE_URL . 'event.php?address=' . $res['address'] ?></p>
         <p class="input_note">上記のURLをコピーして、参加メンバーに知らせてあげてください。<br />もしくは、下のいずれかの共有方法で送信してあげてください。</p>
     </div><!--<this_is_the_URL>-->
 
@@ -92,18 +92,18 @@ $(function() {
                 <span>
                 <script type="text/javascript" src="//media.line.naver.jp/js/line-button.js?v=20131101" ></script>
                 <script type="text/javascript">
-                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo SITE_URL . 'event?address=' . $res['address'] . ' パスワード：' . $res['pass'] ?>","withUrl":false});
+                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo SITE_URL . 'event.php?address=' . $res['address'] . ' パスワード：' . $res['pass'] ?>","withUrl":false});
                 </script>
                 </span>
             </div><!--<shere_way_line>-->
 
             <div id="shere_way_facebook">
-                <div class="fb-send" data-href="<?php echo 'http://beengo.cc/event?address=' . $res['address'] ?>" data-width="280" data-height="280" data-colorscheme="light"></div>
+                <div class="fb-send" data-href="<?php echo 'http://beengo.cc/event.php?address=' . $res['address'] ?>" data-width="280" data-height="280" data-colorscheme="light"></div>
             </div><!--<shere_way_facebook>-->
 
             <div id="shere_way_google">
                 <!-- 共有ボタン を表示したい位置に次のタグを貼り付けてください。 -->
-                <div class="g-plus" data-action="share" data-annotation="none" data-href="<?php echo SITE_URL . 'event?address=' . $res['address'] ?>"></div>
+                <div class="g-plus" data-action="share" data-annotation="none" data-href="<?php echo SITE_URL . 'event.php?address=' . $res['address'] ?>"></div>
 
                 <!-- 最後の 共有 タグの後に次のタグを貼り付けてください。 -->
                 <script type="text/javascript">
@@ -129,7 +129,7 @@ $(function() {
 
     <div class="this_is_the_URL">
         <p><span>マスターページ（幹事用ページ）はこちら</span></p>
-        <?php echo '<p id="master_url"><a href="master?address=' . $res['address'] . '">' . SITE_URL . 'master?address=' . $res['address'] . '</a></p>' ?>
+        <?php echo '<p id="master_url"><a href="master.php?address=' . $res['address'] . '">' . SITE_URL . 'master.php?address=' . $res['address'] . '</a></p>' ?>
     </div><!--<this_is_the_URL>-->
 
 </div><!--<created_wrapper>-->

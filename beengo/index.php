@@ -100,7 +100,7 @@ var timerID = setInterval(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 
@@ -141,9 +141,9 @@ var timerID = setInterval(function() {
                 <p>Beengoを使えば、何人もの参加メンバーとたくさんのメールを交わす必要はありません。イベントに「日時決定」の操作を施せば、「イベントページ」が会場や待ち合わせ場所の地図（Googleマップ）付きの案内状になります。「イベントページ」へのリンクは、Beengo上から自動的にメール本文に挿入させたり、FacebookやGoogle+、LINE（スマホのみ対応）で簡単に共有することもできます。</p>
             </div><!--<appeal_box>-->
             <div class="appeal_box shadow">
-                <h3>誰でも<br />今すぐに使えます。<br />もちろん無料。</h3>
+                <h3>手間いらず。<br />誰でも<br />今すぐに使えます。</h3>
                 <p>ユーザー登録、アカウント作成などは不要です。あなたの大切な個人情報をお預かりすることはありません。</p>
-                <p>作成したイベントページは、誰でも見ることができないように、パスワードを設定することもできます。</p>
+                <p>作成したイベントページは、誰でも見ることができないように、パスワードを設定することもできます。また、作成したイベントページは、作成日から半年で自動的に削除されます。</p>
                 <p>使い方も簡単。説明に従って入力、操作していけば、数ステップで完了します。お気軽に試してみてください。</p>
                 
             </div><!--<appeal_box>-->

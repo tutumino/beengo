@@ -76,7 +76,7 @@ $manageEvent->close();
 <body <?php if ($event['flag_fixed'] == 1) {echo 'onLoad=mapInit();searchMap();';} ?>>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('header.php'); ?>

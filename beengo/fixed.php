@@ -38,7 +38,7 @@ $manageEvent->close();
 // メール文の作成
 // $shortenedDesc = mb_substr($event['description2'], 0, 120) . '……（詳細は下記URLにて）';
 $subject = "「{$event['title']}」日時決定のご案内";
-$body = "イベントページにアクセスして、日時とイベントの詳細をご確認ください。\n\n○イベントページURL\n" . SITE_URL . "event?address={$_SESSION['address']}\n\n";
+$body = "イベントページにアクセスして、日時とイベントの詳細をご確認ください。\n\n○イベントページURL\n" . SITE_URL . "event.php?address={$_SESSION['address']}\n\n";
 if ($event['pass'] != '') {
     $body .= "○パスワード\n{$event['pass']}\n\n";
 }
@@ -73,7 +73,7 @@ $(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('fb.php'); ?>
@@ -89,8 +89,8 @@ $(function() {
 
     <div class="this_is_the_URL">
         <p><span>イベントページのURLはこちら</span></p>
-        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event?address=' . $_SESSION['address'] ?>" />
-        <p id="event_url_s"><?php echo SITE_URL . 'event?address=' . $_SESSION['address'] ?></p>
+        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?>" />
+        <p id="event_url_s"><?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?></p>
         <p class="input_note">上記のURLをコピーして、参加メンバーに知らせてあげてください。<br />もしくは、下のいずれかの共有方法で送信してあげてください。</p>
     </div><!--<this_is_the_URL>-->
 
@@ -106,18 +106,18 @@ $(function() {
                 <span>
                 <script type="text/javascript" src="//media.line.naver.jp/js/line-button.js?v=20131101" ></script>
                 <script type="text/javascript">
-                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo SITE_URL . 'event?address=' . $_SESSION['address'] . ' パスワード：' . $event['pass'] ?>","withUrl":false});
+                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] . ' パスワード：' . $event['pass'] ?>","withUrl":false});
                 </script>
                 </span>
             </div><!--<shere_way_line>-->
 
             <div id="shere_way_facebook">
-                <div class="fb-send" data-href="<?php echo 'http://beengo.cc/event?address=' . $_SESSION['address'] ?>" data-width="50" data-height="50" data-colorscheme="light"></div>
+                <div class="fb-send" data-href="<?php echo 'http://beengo.cc/event.php?address=' . $_SESSION['address'] ?>" data-width="50" data-height="50" data-colorscheme="light"></div>
             </div><!--<shere_way_facebook>-->
 
             <div id="shere_way_google">
                 <!-- 共有ボタン を表示したい位置に次のタグを貼り付けてください。 -->
-                <div class="g-plus" data-action="share" data-annotation="none" data-href="<?php echo SITE_URL . 'event?address=' . $_SESSION['address'] ?>"></div>
+                <div class="g-plus" data-action="share" data-annotation="none" data-href="<?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?>"></div>
 
                 <!-- 最後の 共有 タグの後に次のタグを貼り付けてください。 -->
                 <script type="text/javascript">

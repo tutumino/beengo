@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['pass'] = $_POST['pass'];
         // $_SESSION['address'] = $_POST['address'];
         $_SESSION['login'] = 'ok';
-        header('Location: ' . SITE_URL . 'event?address=' . $_SESSION['address']);
+        header('Location: ' . SITE_URL . 'event.php?address=' . $_SESSION['address']);
     }
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('header.php'); ?>
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p>このイベントは<br />パスワードで保護されています</p>
     <p><span>パスワードを入力して<br />ログインしてください</span></p>
     
-    <form action="<?php echo SITE_URL . 'login?address=' . $_SESSION['address'] ?>" method="post">
+    <form action="<?php echo SITE_URL . 'login.php?address=' . $_SESSION['address'] ?>" method="post">
 
         <div id="input_pass" class="clearfix">
             <input type="password" name="pass" id="" class="input_text" placeholder="パスワード" />

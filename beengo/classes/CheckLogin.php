@@ -31,13 +31,13 @@ class CheckLogin extends ManageDB {
 
     public function checkLogin() {
         if (!($_SESSION['login'] == 'ok' && $this->checkPass($_SESSION['pass']) == true)) {
-            header('Location: ' . SITE_URL . 'login?address=' . $_SESSION['address']);
+            header('Location: ' . SITE_URL . 'login.php?address=' . $_SESSION['address']);
         }
     }
 
     public function checkMasterLogin() {
         if (!($_SESSION['master_login'] == 'ok' && $this->checkMasterPass($_SESSION['master_pass']) == true)) {
-            header('Location: ' . SITE_URL . 'master_login?address=' . $_SESSION['address']);
+            header('Location: ' . SITE_URL . 'master_login.php?address=' . $_SESSION['address']);
         }
     }
 

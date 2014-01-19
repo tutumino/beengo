@@ -46,7 +46,7 @@ $manageEvent->close();
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('fb.php'); ?>

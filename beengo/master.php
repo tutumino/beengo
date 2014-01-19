@@ -21,7 +21,7 @@ $event = $event->fetch(PDO::FETCH_ASSOC);
 // var_dump($event);
 
 if ($event['flag_fixed'] == 1) {
-    header('Location: ' . SITE_URL . 'fixed?address=' . $_SESSION['address']);
+    header('Location: ' . SITE_URL . 'fixed.php?address=' . $_SESSION['address']);
 }
 
 if ($event['master_pass'] != '') {
@@ -80,12 +80,12 @@ $(function() {
 <body>
 
 <noscript>
-    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript">
+    <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
 
 <?php include ('header.php'); ?>
 
-<form action="fix" method="post">
+<form action="fix.php" method="post">
 
     <div id="answers_table_area">
         <table id="answers_table">
