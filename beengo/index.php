@@ -10,9 +10,12 @@ require_once('funcs/funcs.php');
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <meta name="robots" content="noindex,nofollow,noarchive" />
     <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,maximum-scale=1" />
-    <title></title>
+    <title>Beengo | 日程調整・イベント案内ツール</title>
+    <meta name="description" content="日程調整、イベント案内が簡単にできるWebアプリケーション。" />
+    <meta name="keywords" content="日程調整,スケジュール調整,イベント案内,幹事,会合,飲み会,会議,ミーティング,新年会,忘年会,パーティー" />
+    <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
+    <link rel="apple-touch-icon" href="icon.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/import.css" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
@@ -141,9 +144,9 @@ var timerID = setInterval(function() {
                 <p>Beengoを使えば、何人もの参加メンバーとたくさんのメールを交わす必要はありません。イベントに「日時決定」の操作を施せば、「イベントページ」が会場や待ち合わせ場所の地図（Googleマップ）付きの案内状になります。「イベントページ」へのリンクは、Beengo上から自動的にメール本文に挿入させたり、FacebookやGoogle+、LINE（スマホのみ対応）で簡単に共有することもできます。</p>
             </div><!--<appeal_box>-->
             <div class="appeal_box shadow">
-                <h3>手間いらず。<br />誰でも<br />今すぐに使えます。</h3>
+                <h3>手間いらずで安心。<br />誰でも<br />今すぐに使えます。</h3>
                 <p>ユーザー登録、アカウント作成などは不要です。あなたの大切な個人情報をお預かりすることはありません。</p>
-                <p>作成したイベントページは、誰でも見ることができないように、パスワードを設定することもできます。また、作成したイベントページは、作成日から半年で自動的に削除されます。</p>
+                <p>イベントページには、誰でも見ることができないようにパスワードを設定することもできます。また、イベントページは作成日から半年で自動的に消去されます。</p>
                 <p>使い方も簡単。説明に従って入力、操作していけば、数ステップで完了します。お気軽に試してみてください。</p>
                 
             </div><!--<appeal_box>-->
@@ -407,5 +410,8 @@ var timerID = setInterval(function() {
     </form>
 
 </div><!--<create_event_area>-->
+
+<?php include 'footer.php' ?>
+
 </body>
 </html>

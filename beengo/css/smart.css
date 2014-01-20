@@ -83,12 +83,12 @@ a:active {
             top: 0;
             right: 0;
             color: #3d3d3d;
-            font-size: 15px;
-            display: none;
+            font-size: 10px;
+            /*display: none;*/
         }
             #gmenu li {
                 float: left;
-                margin-left: 20px;
+                margin-right: 10px;
             }
             #gmenu li a {
                 display: block;
@@ -768,7 +768,7 @@ a:active {
 #answers_table_area {
     width: 95%;
     overflow: scroll;
-    margin: 30px auto 30px auto;
+    margin: 15px auto 30px auto;
 }
     #answers_table {
         border-collapse: collapse;
@@ -1147,4 +1147,103 @@ SNSシェア
             margin: 0;
             font-size: 9px;
             font-weight: bold;
+        }
+
+/************************************************
+利用規約
+*************************************************/  
+#user_agreement {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0 50px 0;
+    text-align: left;
+    line-height: 1.8em;
+}
+    #user_agreement h2 {
+        font-size: 32px;
+        letter-spacing: 0.1em;
+        margin: 0 0 30px 0;
+    }
+    .formal {
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+    }
+        .formal p {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        .formal h3 {
+            font-size: 19px;
+            color: #3d3d3d;
+            margin: 30px 0 10px 0;
+        }
+        .formal h4 {
+            font-size: 16px;
+            color: #3d3d3d;
+            font-weight: bold;
+        }
+        .formal ul {
+            margin: 20px 0 20px 20px;
+            font-size: 14px;
+        }
+            .formal ul li {
+                margin-bottom: 6px;
+            }
+        .formal ol {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal ol li {
+                margin-bottom: 20px;
+                line-height: 1.8em;
+                list-style-type: decimal;
+            }
+        .formal .paren_num {
+            margin: 20px 0 20px 60px;
+            font-size: 14px;
+        }
+        .formal ol li > .paren_num {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal .paren_num li {
+                list-style-type: none;
+                list-style-position: inside;
+                counter-increment: cnt;
+                text-indent: -21px;
+                margin-bottom: 7px;
+            }
+            .formal .paren_num li:before {
+                display: marker;
+                content: '(' counter(cnt) ')';
+                margin-right: 3px;
+                }
+        .formal address {
+            font-style: normal;
+            font-size: 14px;
+            margin: 20px 0 20px 20px;
+        }
+        .to_pagetop {
+            text-align: right;
+        }
+
+/************************************************
+フッター
+*************************************************/  
+#footer_area {
+    width: 100%;
+    background: #cc3344;
+}
+    #footer {
+        width: 100%;
+        height: 110px;
+        margin: 30px auto 0 auto;
+        text-align: center;
+    }
+        #footer small {
+            font-size: 13px;
+            color: #fff;
+            position: relative;
+            top: 40px;
         }

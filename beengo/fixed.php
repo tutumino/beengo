@@ -52,7 +52,10 @@ $encBody = urlencode($body);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,maximum-scale=1" />
-    <title>Document</title>
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>Beengo | 日程調整・イベント案内ツール</title>
+    <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
+    <link rel="apple-touch-icon" href="icon.png" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
@@ -143,10 +146,11 @@ $(function() {
 </div><!--<created_wrapper>-->
 
 <div id="shere_msg">
-    <p>もしもBeengoを「役に立った！」と思ったら、<br />「いいね！」「シェア」していただけると、とても嬉しいです！</p>
+    <p>もしもBeengoを「役に立った！」と思ったら、<br />「いいね！」「シェア」していただけると、とても嬉しいです。</p>
     <?php include ('sns.php'); ?>
 </div><!--<shere_msg>-->
 
+<?php include 'footer.php' ?>
 
 </body>
 </html>

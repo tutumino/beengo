@@ -50,7 +50,10 @@ $manageEvent->close();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,maximum-scale=1" />
-    <title>Document</title>
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>Beengo | 日程調整・イベント案内ツール</title>
+    <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
+    <link rel="apple-touch-icon" href="icon.png" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
@@ -86,6 +89,8 @@ $(function() {
 <?php include ('header.php'); ?>
 
 <form action="fix.php" method="post">
+
+    <p class="input_note">参加者がイベントページで、各日時候補に対しての都合を登録すると、それが下の表に反映されます。</p>
 
     <div id="answers_table_area">
         <table id="answers_table">
@@ -214,5 +219,8 @@ $(function() {
     </div><!--<input_invitation>-->
 
 </form>
+
+<?php include 'footer.php' ?>
+
 </body>
 </html>
