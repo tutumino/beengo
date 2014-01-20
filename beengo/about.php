@@ -23,6 +23,8 @@ require_once('../config/jp_setting.php');
 
 <body>
 
+<?php include_once("analyticstracking.php") ?>
+
 <?php include 'header.php' ?>
 
 <div id="user_agreement">

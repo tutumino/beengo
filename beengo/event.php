@@ -78,6 +78,8 @@ $manageEvent->close();
 
 <body <?php if ($event['flag_fixed'] == 1) {echo 'onLoad=mapInit();searchMap();';} ?>>
 
+<?php include_once("analyticstracking.php") ?>
+
 <noscript>
     <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>

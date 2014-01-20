@@ -56,6 +56,8 @@ $(function() {
 
 <body>
 
+<?php include_once("analyticstracking.php") ?>
+
 <noscript>
     <META HTTP-EQUIV=Refresh CONTENT="0; URL=noscript.php">
 </noscript>
