@@ -95,7 +95,7 @@ $(function() {
                 <span>
                 <script type="text/javascript" src="//media.line.naver.jp/js/line-button.js?v=20131101" ></script>
                 <script type="text/javascript">
-                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo SITE_URL . 'event.php?address=' . $res['address'] . ' パスワード：' . $res['pass'] ?>","withUrl":false});
+                new jp.naver.line.media.LineButton({"pc":false,"lang":"ja","type":"a","text":"<?php echo '○イベントページ：' . SITE_URL . 'event.php?address=' . $res['address']; if ($res['pass'] != '') {echo '  ○パスワード：' . $res['pass'];} ?>","withUrl":false});
                 </script>
                 </span>
             </div><!--<shere_way_line>-->
