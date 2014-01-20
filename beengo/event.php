@@ -65,6 +65,7 @@ $manageEvent->close();
     <link rel="stylesheet" href="css/import.css">
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/prevent_enter_submit.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
 <?php 
     if ($event['flag_fixed'] == 1) {

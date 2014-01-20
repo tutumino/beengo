@@ -5,7 +5,7 @@
     </div><!--<btn_facebook>-->
 
     <div id="btn_twitter">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://beengo.cc" data-text="Beengo ——忙しい幹事さんへ。日程調整をもっと簡単に。" data-lang="ja">ツイート</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://beengo.cc" data-text="Beengo | 日程調整・イベント案内ツール" data-lang="ja">ツイート</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div><!--<btn_twitter>-->
 

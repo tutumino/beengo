@@ -21,6 +21,7 @@ require_once('funcs/funcs.php');
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/cal.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/prevent_enter_submit.js"></script>
     <script type="text/javascript" src="js/smooth_scroll.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
 
@@ -139,7 +140,7 @@ var timerID = setInterval(function() {
         <div id="appeal_boxes" class="clearfix">
             <div class="appeal_box shadow">
                 <h3>幹事にも<br />参加メンバーにも<br />嬉しいツール。</h3>
-                <p>幹事を引き受けて、意外と大変なのが日程調整。Beengo（ビーンゴ）を使えば、イベント概要と日時候補をサクサクと入力して「イベントページ」を作成し、それを参加メンバーに教えてあげるだけ。参加メンバーは「イベントページ」で参加可能な日時にチェックを入れるだけ。すると、マスターページ（幹事用のページ）で、どの日時がイベント開催に最適なのかが一目でわかる表が自動的にできあがります。</p>
+                <p>幹事を引き受けて、意外と大変なのが日程調整。Beengo（ビーンゴ）を使えば、日時候補をサクサクと入力して「イベントページ」を作成し、それを参加者に教えてあげるだけ。参加者は「イベントページ」で参加可能な日時にチェックを入れるだけ。すると、マスターページ（幹事用のページ）で、イベント開催に最適な日時が一目でわかる表が自動的にできあがります。紙に参加者の予定を書き出して悩む必要はありません。</p>
             </div><!--<appeal_box>-->
             <div class="appeal_box shadow">
                 <h3>イベント告知、<br />日時決定の案内も<br />スマートに。</h3>
