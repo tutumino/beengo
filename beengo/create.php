@@ -8,11 +8,16 @@ require_once('classes/RandUnqStr.php');
 require_once('classes/CreateEvent.php');
 
 session_start();
-// var_dump($address);
+
+// 二重ポスト、CSRF対策
+if (empty($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+    die('不正なアクセスです。');
+}
+unset($_POST['token']);
+unset($_SESSION['token']);
+
 $address = new RandUnqStr();
 $address = $address->getStr();
-// var_dump($address);
-
 
 $title = $_POST['title'];
 $master_name = $_POST['master_name'];
@@ -22,9 +27,8 @@ $pass = $_POST['pass'];
 $datetime = $_POST['datetime'];
 
 $createEvent = new CreateEvent();
-// var_dump($createEvent);
+
 $_SESSION['event_id'] = $createEvent->insertEvent($title, $master_name, $description, $required_time, $address, $pass, $datetime);
-// var_dump($_SESSION['eventId']);
 
 // DB接続解除
 $createEvent->close();

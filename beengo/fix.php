@@ -10,9 +10,12 @@ require_once('classes/ManageEvent.php');
 
 session_start();
 
-// $_SESSION['address'] = $_GET['address'];
-// $getEventId = new GetEventID;
-// $_SESSION['event_id'] = $getEventId->get($_SESSION['address']);
+// 二重ポスト、CSRF対策
+if (empty($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+    die('不正なアクセスです。');
+}
+unset($_POST['token']);
+unset($_SESSION['token']);
 
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $event = $manageEvent->getEvent();
@@ -42,12 +45,6 @@ if (!($_POST['map_location'] == '')) {
 } else {
     $map_location = '';
 }
-
-// var_dump($_SESSION);
-// var_dump($fix);
-// var_dump($description2);
-// var_dump($map_type);
-// var_dump($map_location);
 
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $manageEvent->fix($fix, $description2, $map_type, $map_location);

@@ -10,6 +10,10 @@ require_once('classes/ManageEvent.php');
 
 session_start();
 
+// 二重ポスト、CSRF対策
+$token = sha1(uniqid(rand(), true));
+$_SESSION['token'] = $token;
+
 $_SESSION['address'] = $_GET['address'];
 $getEventId = new GetEventID;
 $_SESSION['event_id'] = $getEventId->get($_SESSION['address']);
@@ -18,7 +22,6 @@ $manageEvent = new ManageEvent($_SESSION['event_id']);
 
 $event = $manageEvent->getEvent();
 $event = $event->fetch(PDO::FETCH_ASSOC);
-// var_dump($event);
 
 if ($event['flag_fixed'] == 1) {
     header('Location: ' . SITE_URL . 'fixed.php?address=' . $_SESSION['address']);
@@ -35,10 +38,6 @@ $registers = array();
 foreach ($memberIds as $value) {
     $registers[] = $manageEvent->getRegistered($value);
 }
-// var_dump($datetimes);
-// var_dump($memberIds);
-// var_dump($registers[0]);
-// var_dump($event);
 
 // DB接続解除
 $manageEvent->close();
@@ -220,6 +219,9 @@ $(function() {
         </div><!--<input_part>-->
 
     </div><!--<input_invitation>-->
+
+    <!-- 二重ポスト、CSRF対策 -->
+    <input type="hidden" name="token" value="<?php echo $token ?>" />
 
 </form>
 

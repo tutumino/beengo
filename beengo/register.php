@@ -9,11 +9,13 @@ require_once('classes/CheckLogin.php');
 require_once('classes/ManageEvent.php');
 
 session_start();
-// var_dump($_SESSION['eventId']);
-// var_dump($_GET['address']);
 
-// var_dump($eventId);
-
+// 二重ポスト、CSRF対策
+if (empty($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
+    die('不正なアクセスです。');
+}
+unset($_POST['token']);
+unset($_SESSION['token']);
 
 $checkLogin = new CheckLogin($_SESSION['event_id']);
 $checkLogin->checkLogin();

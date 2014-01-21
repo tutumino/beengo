@@ -4,6 +4,12 @@ require_once('../config/config.php');
 require_once('../config/jp_setting.php');
 require_once('funcs/funcs.php');
 
+session_start();
+
+// 二重ポスト、CSRF対策
+$token = sha1(uniqid(rand(), true));
+$_SESSION['token'] = $token;
+
 ?>
 
 <!doctype html>
@@ -410,6 +416,10 @@ var timerID = setInterval(function() {
             <p class="input_note">入力内容をよくご確認のうえ、<br />「イベントページを作成」ボタンを押してください。<br />（確認画面は表示されません）</p>
             <input type="submit" class="btn_red shadow" value="イベントページを作成" />
         </div><!--<input_part>-->
+
+        <!-- 二重ポスト、CSRF対策 -->
+        <input type="hidden" name="token" value="<?php echo $token ?>" />
+        
     </form>
 
 </div><!--<create_event_area>-->

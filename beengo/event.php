@@ -9,26 +9,18 @@ require_once('classes/CheckLogin.php');
 require_once('classes/ManageEvent.php');
 
 session_start();
-// var_dump($_SESSION['eventId']);
-// var_dump($_GET['address']);
 
-// $eventId = new GetEventID();
-// $_SESSION['eventId'] = $eventId->get($_GET['address']);
-
-// var_dump($eventId);
+// 二重ポスト、CSRF対策
+$token = sha1(uniqid(rand(), true));
+$_SESSION['token'] = $token;
 
 $_SESSION['address'] = $_GET['address'];
 $getEventId = new GetEventID;
 $_SESSION['event_id'] = $getEventId->get($_SESSION['address']);
-// var_dump($_SESSION['event_id']);
-
-    
-
 
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $event = $manageEvent->getEvent();
 $event = $event->fetch(PDO::FETCH_ASSOC);
-// var_dump($event);
 
 if ($event['pass'] != '') {
     $checkLogin = new CheckLogin($_SESSION['event_id']);
@@ -43,12 +35,8 @@ if ($event['flag_fixed'] == 1) {
     $fixed = $manageEvent->getFixed();
 }
 
-// var_dump($datetimes);
-
 // DB接続解除
 $manageEvent->close();
-// var_dump($_SESSION['address'])
-// var_dump($event['map_type']);
 
 ?>
 
@@ -171,6 +159,10 @@ $manageEvent->close();
             <p class="input_note">入力内容をよくご確認のうえ、「送信」ボタンで送信してください。<br />「確認画面」は表示されません。</p>
             <input type="submit" value="送信" class="btn_red shadow" />
         </div>
+
+        <!-- 二重ポスト、CSRF対策 -->
+        <input type="hidden" name="token" value="<?php echo $token ?>" />
+
     </form>
 
 <?php elseif ($event['flag_fixed'] == 1): ?>
