@@ -18,7 +18,7 @@ $_SESSION['token'] = $token;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,maximum-scale=1" />
     <title>Beengo | 日程調整・イベント案内ツール</title>
-    <meta name="description" content="日程調整、イベント案内が簡単にできるWebアプリケーション。" />
+    <meta name="description" content="日程調整、イベント案内が、とても簡単にできるWebアプリケーション。たくさんの日時候補も専用カレンダーでラクラク入力。日程調整が完了すれば、地図付き（Googleマップ）案内状のできあがり。" />
     <meta name="keywords" content="日程調整,スケジュール調整,イベント案内,幹事,会合,飲み会,会議,ミーティング,新年会,忘年会,パーティー" />
     <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
     <link rel="apple-touch-icon" href="icon.png" />
@@ -174,44 +174,66 @@ var timerID = setInterval(function() {
     
     <form action="create.php" method="post">
 
-        <div class="input_part">
-            <input type="text" name="title" id="title" class="input_text required count64" value="" placeholder="イベント名（必須）" />
-        </div>
+        <div id="input_event_info" class="clearfix">
 
-        <div class="input_part">
-            <textarea name="description" id="description" class="textarea count1280" rows="10" cols="40" placeholder="イベントの概要、詳細、コメントなど"></textarea>
-        </div>
+            <div id="input_event_info_left">
 
-        <div class="input_part">
-            <p class="input_title">所要時間</p>
-            <select name="required_time" id="required_time">
-                <option value="">指定しない</option>
-                <option value="30分">30分</option>
-                <option value="1時間">1時間</option>
-                <option value="1時間30分">1時間30分</option>
-                <option value="2時間">2時間</option>
-                <option value="2時間30分">2時間30分</option>
-                <option value="3時間">3時間</option>
-                <option value="3時間30分">3時間30分</option>
-                <option value="4時間">4時間</option>
-                <option value="4時間30分">4時間30分</option>
-                <option value="5時間">5時間</option>
-                <option value="5時間30分">5時間30分</option>
-                <option value="6時間">6時間</option>
-                <option value="6時間30分">6時間30分</option>
-                <option value="7時間">7時間</option>
-                <option value="7時間30分">7時間30分</option>
-                <option value="8時間">8時間</option>
-                <option value="8時間30分">8時間30分</option>
-            </select>
-        </div>
+                <div class="input_part">
+                    <input type="text" name="title" id="title" class="input_text required count64" value="" placeholder="イベント名（必須）" />
+                </div>
+
+                <div class="input_part">
+                    <textarea name="description" id="description" class="textarea count1280" rows="10" cols="40" placeholder="イベントの詳細、参加者へのコメントなど"></textarea>
+                </div>
+
+            </div><!--<input_event_info_left>-->
+
+            <div id="input_event_info_right">
+
+                <div class="input_part">
+                    <p class="input_title">所要時間</p>
+                    <select name="required_time" id="required_time">
+                        <option value="">指定しない</option>
+                        <option value="30分">30分</option>
+                        <option value="1時間">1時間</option>
+                        <option value="1時間30分">1時間30分</option>
+                        <option value="2時間">2時間</option>
+                        <option value="2時間30分">2時間30分</option>
+                        <option value="3時間">3時間</option>
+                        <option value="3時間30分">3時間30分</option>
+                        <option value="4時間">4時間</option>
+                        <option value="4時間30分">4時間30分</option>
+                        <option value="5時間">5時間</option>
+                        <option value="5時間30分">5時間30分</option>
+                        <option value="6時間">6時間</option>
+                        <option value="6時間30分">6時間30分</option>
+                        <option value="7時間">7時間</option>
+                        <option value="7時間30分">7時間30分</option>
+                        <option value="8時間">8時間</option>
+                        <option value="8時間30分">8時間30分</option>
+                    </select>
+                </div>
+
+                <div class="input_part">
+                    <input type="text" name="master_name" id="master_name" class="input_text required count16" value="" placeholder="あなたのお名前（必須）" />
+                    <p class="input_note">本名を入力する必要はありませんが、参加者があなただとわかる名前を入力してあげてください。</p>
+                </div>
+                
+                <div class="input_part">
+                    <input type="text" name="pass" id="pass" class="input_text ime_off byte_alphanumeric count16" value="" placeholder="パスワード（半角英数16文字以内）" />
+                    <p class="input_note">イベントページにはランダムなURLが割り当てられますが、そのURLをブラウザに打ち込めば誰でも見ることができます。<br />メンバー以外に絶対に見られないようにするには、パスワードを設定してください。（必須ではありません）</p>
+                </div>
+
+            </div><!--<input_event_info_right>-->
+
+        </div><!--<input_event_info>-->
 
         <div id="cal_area">
 
             <p class="input_title">日時候補</p>
 
-            <p class="input_note">カレンダーで候補の日付を選択し（複数同時に選択可）、「時間指定」で時間を指定し（同時に4つまで指定可）、「日時候補を追加」ボタンを押してください。（「時間指定」は必須ではありません）</p>
-            <p class="input_note">たとえば、カレンダーで「4月1日」と「4月3日」を選択し、「時間指定1」で「13:00」、「時間指定2」で「15:00」を指定して「日時候補を追加」ボタンを押した場合、「4月1日 13:00」「4月1日 15:00」「4月3日 13:00」「4月3日 15:00」の4つの日時を同時に追加できます。</p>
+            <p class="input_note">カレンダーで候補の日付を選択し（複数同時に選択可）、「時間指定」で時間を指定し（4つまで同時に指定可）、「日時候補を追加」ボタンを押してください。（「時間指定」は必須ではありません）</p>
+            <p class="input_note">たとえば、カレンダーで「4月1日」と「4月2日」を選択し、「時間指定1」で「13:00」、「時間指定2」で「14:00」を指定して「日時候補を追加」ボタンを押した場合、「4月1日 13:00」「4月1日 14:00」「4月2日 13:00」「4月2日 14:00」の4つの日時を同時に追加できます。</p>
             <p class="input_note">「日時候補を追加」は何度でも実行できます。誤って追加した日時は取り消すこともできます。</p>
 
             <div id="cal_switch_btn_area" class="clearfix">
@@ -400,17 +422,6 @@ var timerID = setInterval(function() {
 
         <input type="button" id="btn_add" class="btn_green shadow" value="日時候補を追加">
         <div id="added_datetime_area"><table id="added_datetime_table"></table></div>
-
-        <div class="input_part">
-            <input type="text" name="master_name" id="master_name" class="input_text required count16" value="" placeholder="あなたのお名前（必須）" />
-            <p class="input_note">本名フルネームを入力する必要はありませんが、参加メンバーがあなただとわかる名前を入力してあげてください。</p>
-        </div>
-        
-        <div class="input_part">
-            <input type="text" name="pass" id="pass" class="input_text ime_off byte_alphanumeric count16" value="" placeholder="パスワード（半角英数16文字以内）" />
-            <p class="input_note">イベントページにはランダムなURLが割り当てられますが、そのURLをブラウザに打ち込めば誰でも見ることができます。<br />メンバー以外に絶対に見られないようにするには、パスワードを設定してください。（必須ではありません）</p>
-            <input type="text" name="pass2" id="pass2" class="input_text ime_off" value="" placeholder="パスワード（再入力）" />
-        </div>
         
         <div class="input_part">
             <p class="input_note">入力内容をよくご確認のうえ、<br />「イベントページを作成」ボタンを押してください。<br />（確認画面は表示されません）</p>
@@ -419,7 +430,7 @@ var timerID = setInterval(function() {
 
         <!-- 二重ポスト、CSRF対策 -->
         <input type="hidden" name="token" value="<?php echo $token ?>" />
-        
+
     </form>
 
 </div><!--<create_event_area>-->

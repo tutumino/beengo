@@ -62,7 +62,7 @@ a:active {
     /*background: #eff0e6;*/
 }
     #header {
-        width: 1000px;
+        width: 900px;
         height: 39px;
         margin: 0 auto 100px auto;
         position: relative;
@@ -119,7 +119,7 @@ a:active {
     padding: 10px 0 60px 0;
 }
     #top {
-        width: 1000px;
+        width: 900px;
         margin: 0 auto;
         position: relative;
     }
@@ -129,7 +129,7 @@ a:active {
             margin-top: 10px;
         }
             #top #catch h2 {
-                font-size: 29px;
+                font-size: 26px;
                 letter-spacing: 0.1em;
                 line-height: 1.7em;
                 /*font-weight: bold;*/
@@ -163,28 +163,28 @@ a:active {
         }
             #top .appeal_box {
                 float: left;
-                width: 324px;
-                min-height: 464px;
+                width: 290px;
+                min-height: 445px;
                 background: #ffffff;
                 /*padding: 20px;*/
                 text-align: left;
-                margin-right: 14px;
+                margin-right: 15px;
             }
             #top .appeal_box:nth-child(3n) {
                 margin-right: 0;
             }
                 #top .appeal_box h3 {
-                    font-size: 22px;
+                    font-size: 19px;
                     font-weight: bold;
                     letter-spacing: 0.1em;
-                    padding: 17px 23px;
+                    padding: 15px 20px;
                     /*margin-bottom: 10px;*/
                     background: #cc3344;
                     color: #ffffff;
                 }
                 #top .appeal_box p {
-                    font-size: 15px;
-                    padding: 12px 23px 0 23px;
+                    font-size: 14px;
+                    padding: 12px 20px 0 20px;
                 }
                 #top .appeal_box p + p {
                     padding-top: 0;
@@ -215,63 +215,113 @@ a:active {
             color: #ffffff;
             padding-bottom: 25px;
         }
-        .input_part {
-            margin: 0 0 30px 0;
+        #input_event_info {
+            width: 900px;
+            margin: 0 auto;
         }
-            .input_text {
-                width: 500px;
-                /*height: 40px;*/
-                border: 1px solid #cc3344;
-                padding: 12px 13px;
+            #input_event_info_left {
+                width: 400px;
+                float: left;
+                text-align: left;
             }
-            .textarea {
-                width: 500px;
-                border: 1px solid #cc3344;
-                padding: 10px 16px;
-                line-height: 1.6em;
+            #input_event_info_right {
+                width: 400px;
+                float: right;
+                text-align: left;
             }
-            #required_time {
-                -webkit-appearance: button;
-                -moz-appearance: button;
-                appearance: button;
-                width: 500px;
-                padding: 9px 30px;
-                border: 1px solid #cc3344;
-                -moz-border-radius: 0;
-                -webkit-border-radius: 0;
-                -o-border-radius: 0;
-                -ms-border-radius: 0;
-                border-radius: 0;
-                cursor: pointer;
-                /*text-align: center;*/
-                background: url(../img/select_s.png) no-repeat;
-                background-position: 450px 13px;
-                background-color: #ffffff;
-            }
-            .input_title {
-                font-size: 23px;
-                color: #cc3344;
-            }
-            .input_note {
-                font-size: 14px;
-                font-weight: bold;
-                width: 500px;
-                line-height: 1.6em;
-                margin: 3px auto;
-                /*color: #cc3344;*/
-            }
-            .input_note + .input_note {
-                margin-top: 15px;
-            }
-            .err_msg {
-                font-size: 14px;
-                font-weight: bold;
-                color: #cc3344;
-            }
-            .ime_off { /*safari、chromeでは効かない？*/
-                -ms-ime-mode: disabled;
-                ime-mode: disabled;
-            }
+                .input_part {
+                    margin: 0 0 30px 0;
+                }
+                    .input_text {
+                        width: 500px;
+                        height: 40px;
+                        border: 1px solid #cc3344;
+                        padding: 12px 13px;
+                    }
+                    .textarea {
+                        width: 500px;
+                        border: 1px solid #cc3344;
+                        padding: 10px 16px;
+                        line-height: 1.6em;
+                    }
+                    #input_event_info .input_text {
+                        width: 400px;
+                        /*height: 40px;*/
+                        border: 1px solid #cc3344;
+                        padding: 12px 13px;
+                    }
+                    #input_event_info .textarea {
+                        width: 400px;
+                        border: 1px solid #cc3344;
+                        padding: 10px 16px;
+                        line-height: 1.6em;
+                        resize: vertical;
+                    }
+                    #input_event_info .input_note {
+                        font-size: 14px;
+                        /*font-weight: bold;*/
+                        width: 400px;
+                        line-height: 1.6em;
+                        margin: 3px auto;
+                        /*color: #cc3344;*/
+                    }
+                    #input_event_info .input_title {
+                        width: 100px;
+                        float: left;
+                    }
+                    #input_event_info #required_time {
+                        float: right;
+                        -webkit-appearance: button;
+                        -moz-appearance: button;
+                        appearance: button;
+                        width: 290px;
+                        padding: 9px 25px;
+                        height: 40px;
+                        border: 1px solid #cc3344;
+                        -moz-border-radius: 0;
+                        -webkit-border-radius: 0;
+                        -o-border-radius: 0;
+                        -ms-border-radius: 0;
+                        border-radius: 0;
+                        cursor: pointer;
+                        background: url(../img/select_s.png) no-repeat;
+                        background-position: 255px 11px;
+                        background-color: #ffffff;
+                        margin-bottom: 40px;
+                        text-indent: .01px; /*Firefoxで下矢印が消えない問題対策*/
+                        text-overflow: "";　/*Firefoxで下矢印が消えない問題対策*/
+                    }
+                    #input_event_info #master_name {
+                        clear: both;
+                    }
+                    .input_title {
+                        font-size: 23px;
+                        color: #cc3344;
+                    }
+                    #cal_area .input_title {
+                        font-size: 31px;
+                        color: #cc3344;   
+                    }
+                    .input_note {
+                        font-size: 14px;
+                        /*font-weight: bold;*/
+                        width: 900px;
+                        line-height: 1.6em;
+                        margin: 3px auto;
+                        /*color: #cc3344;*/
+                    }
+                    .input_note + .input_note {
+                        margin-top: 15px;
+                    }
+                    .err_msg {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #cc3344;
+                    }
+                    .ime_off { /*safari、chromeでは効かない？*/
+                        -ms-ime-mode: disabled;
+                        ime-mode: disabled;
+                    }
 
         #added_datetime_area {
             width: auto;
@@ -317,126 +367,132 @@ a:active {
 /************************************************
 カレンダー
 *************************************************/
-#cal_switch_btn_area {
-    width: 210px;
-    text-align: center;
-    margin: 20px auto 10px auto;
+#cal_area {
+
 }
-    #pre_month_btn {
+    #cal_switch_btn_area {
+        width: 210px;
+        text-align: center;
+        margin: 20px auto 10px auto;
+    }
+        #pre_month_btn {
+            float: left;
+            font-size: 17px;
+            color: #cc3344;
+            margin: 3px 5px 3px 5px;
+            cursor: pointer;
+            text-decoration: underline;
+            user-select: none; /* CSS3 */
+            -moz-user-select: none; /* Firefox */
+            -webkit-user-select: none; /* Safari、Chromeなど */
+            -ms-user-select: none; /* IE10かららしい */
+            unselectable="on"; /* IE */
+        }
+            #pre_month_btn:hover {
+                color: #dd7788;
+            }
+        #nxt_month_btn {
+            float: right;
+            font-size: 17px;
+            color: #cc3344;
+            margin: 3px 5px 3px 5px;
+            cursor: pointer;
+            text-decoration: underline;
+            user-select: none; /* CSS3 */
+            -moz-user-select: none; /* Firefox */
+            -webkit-user-select: none; /* Safari、Chromeなど */
+            -ms-user-select: none; /* IE10かららしい */
+            unselectable="on"; /* IE */
+        }
+            #nxt_month_btn:hover {
+                color: #dd7788;
+            }
+    #insert_cal_area {
+        margin: 0 auto;
+        text-align: center;
+        width: 900px;
+        min-height: 260px;
+        height: auto !important; /*IE対策？*/
+        height: 260px;　/*IE対策？*/
+    }
+    #insert_cal_area table {
+        width: 280px;
+        margin-right: 30px;
+        border-collapse: collapse;
+        border: none;
         float: left;
-        font-size: 17px;
-        color: #cc3344;
-        margin: 3px 5px 3px 5px;
-        cursor: pointer;
-        text-decoration: underline;
-        user-select: none; /* CSS3 */
-        -moz-user-select: none; /* Firefox */
-        -webkit-user-select: none; /* Safari、Chromeなど */
-        -ms-user-select: none; /* IE10かららしい */
-        unselectable="on"; /* IE */
+        box-shadow: 0px 0px 6px #999999;
+        -moz-box-shadow: 0px 0px 6px #999999;
+        -webkit-box-shadow: 0px 0px 6px #999999;
     }
-        #pre_month_btn:hover {
-            color: #dd7788;
-        }
-    #nxt_month_btn {
-        float: right;
-        font-size: 17px;
-        color: #cc3344;
-        margin: 3px 5px 3px 5px;
-        cursor: pointer;
-        text-decoration: underline;
-        user-select: none; /* CSS3 */
-        -moz-user-select: none; /* Firefox */
-        -webkit-user-select: none; /* Safari、Chromeなど */
-        -ms-user-select: none; /* IE10かららしい */
-        unselectable="on"; /* IE */
+    #insert_cal_area table:nth-child(3n) {
+        margin-right: 0;
     }
-        #nxt_month_btn:hover {
-            color: #dd7788;
+        .cal_head {
+            border: 2px solid #cc3344;
+            background: #cc3344;
+            color: #F8F8F8;
+            font-size: 14px;
+            text-align: center;
+            padding: 8px 0 2px 0;
         }
-#insert_cal_area {
-    margin: 0 auto;
-    text-align: center;
-    width: 860px;
-    min-height: 260px;
-    height: auto !important; /*IE対策？*/
-    height: 260px;　/*IE対策？*/
-}
-#insert_cal_area table {
-    width: 280px;
-    margin: 0 3px 0 3px;
-    border-collapse: collapse;
-    border: none;
-    float: left;
-    box-shadow: 0px 0px 6px #999999;
-    -moz-box-shadow: 0px 0px 6px #999999;
-    -webkit-box-shadow: 0px 0px 6px #999999;
-}
-    .cal_head {
-        border: 1px solid #cc3344;
-        background: #cc3344;
-        color: #F8F8F8;
-        font-size: 14px;
-        text-align: center;
-        padding: 8px 0 2px 0;
-    }
-    .cal_days_row th {
-        border: 1px solid #cc3344;
-        background: #cc3344;
-        color: #F8F8F8;
-        font-size: 11px;
-        text-align: center;
-        padding: 0px 0 5px 0;
-    }
-    #insert_cal_area td {
-        border: 2px solid #ffffff;
-        color: #000000;
-        font-size: 13px;
-        text-align: center;
-        padding: 5px 0;
-        user-select: none; /* CSS3 */
-        -moz-user-select: none; /* Firefox */
-        -webkit-user-select: none; /* Safari、Chromeなど */
-        -ms-user-select: none; /* IE10かららしい */
-        unselectable="on"; /* IE */
-    }
-        .cal_emptyTd {
-            background: #ffffff;
-            cursor: default;
+        .cal_days_row th {
+            border: 2px solid #cc3344;
+            background: #cc3344;
+            color: #F8F8F8;
+            font-size: 11px;
+            text-align: center;
+            padding: 0 0 5px 0;
         }
-        .cal_off {
-            background: #ffffff;
-            cursor: pointer;
+        #insert_cal_area td {
+            border: 2px solid #ffffff;
+            color: #000000;
+            font-size: 13px;
+            text-align: center;
+            padding: 5px 0;
+            user-select: none; /* CSS3 */
+            -moz-user-select: none; /* Firefox */
+            -webkit-user-select: none; /* Safari、Chromeなど */
+            -ms-user-select: none; /* IE10かららしい */
+            unselectable="on"; /* IE */
         }
-        .cal_off:hover {
-            background: #eeeeee;
-            cursor: pointer;
-        }
-        .cal_on {
-            background: #ee9944;
-            cursor: pointer;
-        }
-        .cal_on:hover {
-            background: #ee9944;
-            cursor: pointer;
-        }
-        .cal_added {
-            background: #fbe5d0;
-            cursor: pointer;
-        }
+            .cal_emptyTd {
+                background: #ffffff;
+                cursor: default;
+            }
+            .cal_off {
+                background: #ffffff;
+                cursor: pointer;
+            }
+            .cal_off:hover {
+                background: #eeeeee;
+                cursor: pointer;
+            }
+            .cal_on {
+                background: #ee9944;
+                cursor: pointer;
+            }
+            .cal_on:hover {
+                background: #ee9944;
+                cursor: pointer;
+            }
+            .cal_added {
+                background: #fbe5d0;
+                cursor: pointer;
+            }
 
 /************************************************
 時間指定
 *************************************************/
 #time_select_area {
-    width: 835px;
+    width: 900px;
     margin: 0 auto 0 auto;
 }
     .time_select {
-        width: 190px;
+        width: 200px;
         text-align: center;
         float: left;
-        margin-right: 25px;
+        margin-right: 33px;
     }
     .time_select:nth-child(4) {
         margin-right: 0;
@@ -702,7 +758,7 @@ a:active {
         border-bottom: 1px solid #ee9944;
     }
         .datetime_box {
-            float: right;
+            float: left;
         }
             .datetime_box p {
                 font-size: 25px;
@@ -715,7 +771,7 @@ a:active {
                 }
         .answer_radio_box {
             width: 97px;
-            float: left;
+            float: right;
         }
             .answer_radio_box label {
                 font-size: 14px;
@@ -857,6 +913,9 @@ a:active {
         margin: 0 auto;
         text-align: center;
     }
+        #input_invitation .input_note {
+            width: 700px;
+        }
         #description2 {
             width: 600px;
         }
@@ -876,7 +935,7 @@ a:active {
             }
             #search_map_btn input[type="button"] {
                 width: 70px;
-                height: 44px;
+                height: 40px;
                 float: right;
                 padding: 0;
                 margin: 0;
@@ -921,6 +980,9 @@ createdページ　fixedページ
         #event_url_s {
             display: none;
         }
+            #created_wrapper .input_note {
+                width: 500px;
+            }
     #event_shere_way {
         /*margin: 0 auto 0 auto;*/
         /*width: 500px;*/

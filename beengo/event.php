@@ -148,7 +148,7 @@ $manageEvent->close();
 
         <div class="input_part">
             <input type="text" name="member_name" id="member_name" class="input_text required count16" value="" placeholder="あなたのお名前（必須）" />
-            <p class="input_note">本名フルネームを入力する必要はありませんが、<br /><?php echo $event['master_name'] ?>さんがあなただとわかるお名前を入力してあげてください。</p>
+            <p class="input_note">本名を入力する必要はありませんが、<br /><?php echo $event['master_name'] ?>さんがあなただとわかるお名前を入力してあげてください。</p>
         </div>
 
         <div class="input_part">

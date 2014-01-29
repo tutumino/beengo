@@ -187,7 +187,7 @@ $(function() {
     <div id="input_invitation">
 
         <div class="input_part">
-            <p class="input_note">イベント概要、コメントなどを入力してください。<br />変更を加えなければ、「イベントページ」作成時の文面が<br />そのまま挿入されます。</p>
+            <p class="input_note">イベント概要、コメントなどを入力してください。<br />変更を加えなければ、「イベントページ」作成時の文面がそのまま挿入されます。</p>
             <textarea name="description2" id="description2" cols="40" rows="10" class="textarea count1280" placeholder="イベントの概要、詳細、コメントなど"><?php echo $event['description']; ?></textarea>
         </div>
 

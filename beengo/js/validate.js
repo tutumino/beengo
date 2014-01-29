@@ -127,14 +127,14 @@ $(function() {
 
         }
             
-        if ($('#pass2').size()) {
+        // if ($('#pass2').size()) {
 
-            if ($('#pass').val() != '' && $('#pass2').val() != $('#pass').val()) {
-                errMsg += '「パスワード（再入力）」が「パスワード」と一致しません。\n';
-                errFlag = 1;
-            }
+        //     if ($('#pass').val() != '' && $('#pass2').val() != $('#pass').val()) {
+        //         errMsg += '「パスワード（再入力）」が「パスワード」と一致しません。\n';
+        //         errFlag = 1;
+        //     }
 
-        }
+        // }
             
         if ($('#added_datetime_table').size()) {
 
