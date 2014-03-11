@@ -1,0 +1,199 @@
+.shadow01 {
+    .shadow(6px, #999);
+}
+.shadow02 {
+    .shadow(3px, #999);
+}
+.shadow03 {
+    .shadow(25px, #999);
+}
+
+.input() {
+    .appearanceNon;
+    border: 3px solid @siteColor02;
+    .rounded(5px);
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 7px;
+    background-color: #fff;
+}
+
+html {
+    overflow: auto;
+}
+
+* {
+    color: @textColor;
+}
+
+body {
+    background: @bgColor;
+    -webkit-font-smoothing: antialiased;
+    font-family: @ff;
+    font-size: @fontSize;
+    text-align: center;
+    overflow: hidden;
+}
+
+p {
+    font-size: @fontSize;
+    color: @textColor;
+    line-height: @lineHight;
+}
+
+a {
+    .textLinkS;
+}
+
+// --------------------------------------------------
+// ボタン
+// --------------------------------------------------
+.btn(@color, @letterSpacing: 0, @radius: 5px) {
+    .appearanceNon;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    background: @color;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: @letterSpacing;
+    border: none;
+    cursor: pointer;
+    // -webkit-tap-highlight-color: rgba(0,0,0,0); //スマホ、タップで色変えない指定
+    .rounded(@radius);
+
+    &:hover {
+        background: darken(@color, 7%);
+    }
+
+    // &:active {
+    //     background: darken(@color, 7%);
+    // }
+}
+
+.btn_orange {
+    .btn(@siteColor02);
+}
+
+.btn_red {
+    .btn(@siteColor01);
+}
+
+.input_btn(@inputWidth, @btnWidth, @color) {
+    .cf;
+
+    input:nth-child(1) {
+        .appearanceNon;
+        border: 3px solid @color;
+        border-right: none;
+        .rounded(5px, 0, 0, 5px);
+        height: 40px;
+        padding: 7px 15px;
+        background-color: #fff;
+        width: @inputWidth;
+        float: left;
+        margin: 0;
+    }
+
+    input:nth-child(2) {
+        .appearanceNon;
+        display: block;
+        width: @btnWidth;
+        height: 40px;
+        float: right;
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        .rounded(0, 5px, 5px, 0);
+        background: @color;
+        font-size: 16px;
+        font-weight: normal;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        // -webkit-tap-highlight-color: rgba(0,0,0,0); //スマホ、タップで色変えない指定
+
+        &:hover {
+            background: darken(@color, 7%);
+        }
+
+        // &:active {
+        //     background: darken(@color, 7%);
+        // }
+    }
+}
+
+// --------------------------------------------------
+// テキスト
+// --------------------------------------------------
+.note_c14 {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 95%;
+    margin: 0 auto;
+}
+.stress {
+    font-weight: bold;
+}
+.stress_red {
+    font-weight: bold;
+    color: @siteColor01;
+}
+.stress_s {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+}
+p + .stress_s {
+    margin-top: 5px;
+}
+.stress_s_red {
+    font-size: 12px;
+    font-weight: bold;
+    color: @siteColor01;
+}
+.err_msg {
+    color: @siteColor01;
+}
+
+// --------------------------------------------------
+// hidden_note
+// --------------------------------------------------
+.point_of_hidden_note {
+    position: relative;
+
+    .hidden_note {
+        display: none;
+        width: 93%;
+        position: absolute;
+        padding: 20px;
+        background: @siteColor01;
+        .rounded(10px);
+        .shadow03;
+        z-index: 100;
+
+        &:after {
+            content: '';
+            border-left: 0 solid transparent;
+            border-bottom: 20px solid @siteColor01;
+            border-right: 17px solid transparent;
+            position: absolute;
+            top: -20px;
+            left: 160px;
+            // .shadow03;
+        }
+
+        p {
+            font-size: 13px;
+            color: #fff;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

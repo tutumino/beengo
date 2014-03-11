@@ -273,6 +273,7 @@ a:active {
                         float: right;
                         -webkit-appearance: button;
                         -moz-appearance: button;
+                        -ms-appearance: button;
                         appearance: button;
                         width: 290px;
                         padding: 9px 25px;
@@ -500,6 +501,7 @@ a:active {
         .time_select select {
             -webkit-appearance: button;
             -moz-appearance: button;
+            -ms-appearance: button;
             appearance: button;
             width: 80px;
             padding: 7px 10px;
@@ -513,6 +515,8 @@ a:active {
             background: url(../img/select_s.png) no-repeat;
             background-position: 50px 8px;
             background-color: #ffffff;
+            text-indent: .01px; /*Firefoxで下矢印が消えない問題対策*/
+            text-overflow: "";　/*Firefoxで下矢印が消えない問題対策*/
         }
         .time_select select[disabled] {
             color: #cccccc;

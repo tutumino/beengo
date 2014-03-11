@@ -1,0 +1,1261 @@
+@import "reset.less";
+@import "def.less";
+@import "common.less";
+// --------------------------------------------------
+// ヘッダー
+// --------------------------------------------------
+#header_area {
+    .cf;
+    width: 100%;
+    border-top: 5px solid @siteColor01;
+    overflow: visible;
+
+    #header {
+        .cf;
+        width: @wholeWidth;
+        height: 39px;
+        margin: 0 auto 100px auto;
+        position: relative;
+        overflow: visible;
+
+        h1 {
+            background: url(../img/logo.png) no-repeat;
+            width: 210px;
+            height: 101px;
+            text-indent: -9999px;
+            position: relative;
+            top: 13px;
+            cursor: pointer;
+
+            &:hover {
+                .translucent(0.8);
+            }
+
+            a {
+                .allLink;
+            }
+        }
+
+        #gmenu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: @textColor;
+            font-size: 15px;
+
+            li {
+                float: left;
+                margin-left: 20px;
+
+                a {
+                    display: block;
+                    color: @textColor;
+                    text-decoration: none;
+                    padding: 9px 0;
+
+                    &:visited {
+                        color: @textColor;
+                        text-decoration: none;
+                    }
+                    &:hover {
+                        color: lighten(@textColor, 20%);
+                        text-decoration: none;
+                        border-bottom: 3px solid @siteColor02;
+                    }
+                    &:active {
+                        color: @textColor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　トップエリア
+// --------------------------------------------------
+#top_area {
+    width: 100%;
+    padding: 10px 0 60px 0;
+
+    #top {
+        width: @wholeWidth;
+        margin: 0 auto;
+        position: relative;
+        .cf;
+
+        #catch {
+            float: left;
+            text-align: left;
+            margin-top: 10px;
+
+            h2 {
+                font-size: 26px;
+                letter-spacing: 0.1em;
+                line-height: 1.7em;
+                // font-weight: bold;
+                margin-bottom: 5px;
+                // color: #5f5f5f;
+            }
+
+            #immediately {
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+
+            #sns_btns {
+                margin: 20px 0;
+                padding: 0;
+            }
+        }
+
+        #captures_area {
+            width: 500px;
+            height: 300px;
+            float: right;
+            margin-top: -30px;
+            margin-bottom: 20px;
+            overflow: hidden;
+
+            #captures_wrapper {
+                width: 2000px;
+
+                img {
+                    float: left;
+                    margin: 0;
+                }
+            }
+        }
+
+        #appeal_boxes {
+            clear: both;
+            .cf;
+
+            .appeal_box {
+                .shadow01;
+                .rounded(7px);
+                float: left;
+                width: 290px;
+                min-height: 420px;
+                background: #ffffff;
+                /*padding: 20px;*/
+                text-align: left;
+                margin-right: 15px;
+
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+
+                h3 {
+                    .rounded(7px, 7px, 0, 0);
+                    font-size: 19px;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                    padding: 15px 20px;
+                    /*margin-bottom: 10px;*/
+                    background: @siteColor01;
+                    color: #ffffff;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 1.7;
+                    padding: 12px 20px 0 20px;
+                }
+
+                p + p {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　イベントページ作成エリア
+// --------------------------------------------------
+#create_event_area {
+    width: 100%;
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: left;
+
+    #create_event_h {
+        width: 100%;
+        background: @siteColor01;
+        margin-bottom: 40px;
+
+        h3 {
+            width: @wholeWidth;
+            margin: 0 auto;
+            padding: 25px 0 10px 0;
+            font-size: 33px;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+        }
+
+        p {
+            width: @wholeWidth;
+            margin: 0 auto;
+            // font-size: 14px;
+            color: #ffffff;
+            padding-bottom: 25px;
+        }
+    }
+
+    #input_event_info {
+        position: relative;
+        width: @wholeWidth;
+        margin: 0 auto 30px auto;
+
+        .input_title {
+            margin-bottom: 2px;
+
+            &:nth-of-type(3) {
+                position: absolute;
+                top: 0;
+                right: 107px;
+            }
+
+            a {
+                margin-left: 10px;
+            }
+        }
+
+        input[type="text"] {
+            width: 410px;
+            .input;
+        }
+
+        #required_time {
+            .appearanceNon;
+            .input;
+            width: 410px;
+            background: url(../img/select_arrow.png) no-repeat;
+            background-position: 95% 50%;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 410px;
+            .input;
+            height: 400px;
+            line-height: 1.5;
+            position: absolute;
+            top: 29px;
+            right: 0;
+            resize: none;
+        }
+    }
+
+    #hidden_note01 {
+        top: 0;
+        left: 295px;
+    }
+
+    #hidden_note02 {
+        top: 0;
+        left: 200px;
+    }
+
+    #hidden_note03 {
+        top: 0;
+        left: 230px;
+    }
+
+    #hidden_note04 {
+        top: 20px;
+        left: 260px;
+    }
+}
+
+// --------------------------------------------------
+// トップページ　カレンダー
+// --------------------------------------------------
+#cal_area {
+    position: relative;
+    width: @wholeWidth;
+    margin: 0 auto;
+
+    .input_title {
+        font-size: 31px;
+        letter-spacing: 4px;
+
+        a {
+            font-size: 16px;
+            letter-spacing: 0;
+            margin-left: 10px;
+        }
+    }
+
+    #cal_switch_btn_area {
+        .cf;
+        width: 210px;
+        text-align: center;
+        margin: 10px auto;
+
+        #pre_month_btn {
+            float: left;
+            font-size: 17px;
+            color: #cc3344;
+            margin: 3px 5px 3px 5px;
+            cursor: pointer;
+            text-decoration: underline;
+            .selectNon;
+
+            &:hover {
+                color: lighten(@siteColor01, 20%)
+            }
+        }
+
+        #nxt_month_btn {
+            float: right;
+            font-size: 17px;
+            color: #cc3344;
+            margin: 3px 5px 3px 5px;
+            cursor: pointer;
+            text-decoration: underline;
+            .selectNon;
+
+            &:hover {
+                color: lighten(@siteColor01, 20%)
+            }
+        }
+    }
+
+    #insert_cal_area {
+        margin: 0 auto;
+        text-align: center;
+        width: 900px;
+        min-height: 260px;
+        height: auto !important; // IE対策？
+        height: 260px;　// IE対策？
+
+        table {
+            width: 280px;
+            margin-right: 30px;
+            border-collapse: separate;
+            border-spacing: 0;
+            // border: none;
+            float: left;
+            .shadow01;
+
+            &:nth-child(3) {
+                margin-right: 0;
+            }
+
+            .cal_head {
+                // border: 2px solid @siteColor01;
+                background: @siteColor01;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                padding: 9px 0 3px 0;
+            }
+            .cal_days_row th {
+                // border: 2px solid @siteColor01;
+                background: @siteColor01;
+                color: #fff;
+                font-size: 11px;
+                text-align: center;
+                padding: 0 0 7px 0;
+            }
+            td {
+                border: 1px solid #ffffff;
+                width: 280px / 7;
+                color: @textColor;
+                font-size: 13px;
+                text-align: center;
+                padding: 5px 0;
+                .selectNon;
+            }
+            .cal_emptyTd {
+                background: #ffffff;
+                cursor: default;
+            }
+            .cal_off {
+                background: #ffffff;
+                cursor: pointer;
+
+                &:hover {
+                    background: #f3f3f3;
+                    cursor: pointer;
+                }
+            }
+
+            .cal_on {
+                background: @siteColor02;
+                cursor: pointer;
+
+                &:hover {
+                    background: lighten(@siteColor02, 5%);
+                    cursor: pointer;
+                }
+            }
+
+            .cal_added {
+                background: lighten(@siteColor02, 32%);
+                cursor: pointer;
+
+                &:hover {
+                    background: lighten(@siteColor02, 27%);
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　時間指定
+// --------------------------------------------------
+#time_select_area {
+    .cf;
+    width: @wholeWidth;
+    margin: 0 auto;
+
+    .time_select {
+        width: 190px;
+        text-align: center;
+        float: left;
+        margin-right: 46px;
+
+        &:nth-child(4) {
+            margin-right: 0;
+        }
+
+        .input_title {
+            font-size: 21px;
+        }
+
+        select {
+            .appearanceNon;
+            .input;
+            width: 80px;
+            background: url(../img/select_arrow.png) no-repeat;
+            background-position: 85% 50%;
+            background-color: #fff;
+            cursor: pointer;
+
+            &:disabled {
+                .translucent(0.6);
+                cursor: default;
+            }
+        }
+
+        .colon {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            width: 19px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　日時追加エリア
+// --------------------------------------------------
+#added_datetime_area {
+    width: auto;
+    min-height: 200px;
+    height: auto !important; // IE対策？
+    height: 200px;　// IE対策？
+    text-align: center;
+
+    #added_datetime_table {
+        margin: 10px auto 30px auto;
+        width: 540px;
+        border-collapse: collapse;
+
+        .added_datetime {
+            font-size: 24px;
+            height: 38px;
+
+            .year {
+                font-size: 16px;
+                color: lighten(@textColor, 20%);
+                margin: 0 5px 0 20px;
+            }
+        }
+
+        .del_btn {
+            text-align: center;
+            font-size: 16px;
+            color: @linkColor;
+            cursor: pointer;
+
+            &:hover {
+                color: @hoverColor;
+                text-decoration: underline;
+            }
+            &:active {
+                color: @activeColor;
+                text-decoration: underline;
+            }
+            &:visited {
+                color: @visitedColor;
+            }
+        }
+
+        .hidden {
+             display: none;
+        }
+    }
+}
+
+// --------------------------------------------------
+// createdページ / fixedページ
+// --------------------------------------------------
+#created_wrapper {
+    width: 580px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-top: @siteColor01 solid 5px;
+    text-align: left;
+    .shadow02;
+    position: relative;
+    .rounded(7px);
+
+    #created_msg {
+        text-align: center;
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 26px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .url_title {
+        margin: 30px 0 5px 0;
+        font-weight: bold;
+        position: relative;
+        overflow: visible;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    #hidden_note01 {
+        top: 0;
+        left: 260px;
+    }
+
+    #hidden_note02 {
+        top: 0;
+        left: 260px;
+    }
+
+    #event_url, #master_url {
+        .input;
+        width: 100%;
+        font-size: 18px;
+        // font-weight: bold;
+    }
+
+    #event_url_s, #master_url_s {
+        display: none;
+    }
+
+    #event_shere_way {
+        position: relative;
+        padding: 20px 0;
+        text-align: center;
+
+        #shere_way_btn_wrapper {
+            width: 250px;
+            margin: 0 auto;
+            .cf;
+
+            #shere_way_send_mail {
+                width: 87px;
+                height: 22px;
+                float: left;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 2px 4px;
+                    color: #ffffff;
+                    font-size: 11px;
+                    font-weight: bold;
+                    background: @siteColor01;
+                    .rounded(3px);
+
+                    &:visited {
+                        color: #ffffff;
+                    }
+
+                    &:hover {
+                        background: darken(@siteColor01, 5%);
+                        color: #ffffff;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            #shere_way_line {
+                width: 90px;
+                float: left;
+                display: none;
+            }
+            #shere_way_facebook {
+                width: 90px;
+                float: left;
+            }
+            #shere_way_google {
+                width: 90px;
+                float: left;
+                margin-left: -20px;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// イベントページ
+// --------------------------------------------------
+#invitation_outer {
+    width: 682px;
+    margin: 0 auto;
+    padding: 6px;
+    position: relative;
+    overflow: hidden;
+
+    .ribbon {
+        width: 195px;
+        height: 43px;
+        position: absolute;
+        text-align: center;
+        top: 25px;
+        right: -51px;
+        z-index: 1;
+        background: @siteColor01;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        .shadow01;
+
+        p {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 5px;
+            color: #932531;
+        }
+
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 37px;
+            right: 179px;
+            z-index: -1;
+            border: 6px solid;
+            border-color: transparent transparent #932531 transparent;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        }
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 37px;
+            right: 4px;
+            z-index: -1;
+            border: 6px solid;
+            border-color: transparent transparent transparent #932531;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        }
+    }
+
+    #invitation {
+        width: 670px;
+        background: #ffffff;
+        padding-bottom: 30px;
+        .shadow01;
+        .rounded(5px);
+        margin-bottom: 30px;
+
+        #master_name_area {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 30px;
+            padding: 20px 50px 20px 50px;
+            background: #fafafa;
+            border-top: 5px solid @siteColor02;
+            border-bottom: 1px solid #e0e0e0;
+            .rounded(5px, 5px, 0, 0);
+
+            p {
+                font-size: 14px;
+                line-height: 1.7em;
+
+                span {
+                    font-weight: bold;
+                    font-size: 17px;
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        #title_area {
+            width: 100%;
+            text-align: center;
+            // margin-bottom: 10px;
+            padding: 10px 50px;
+
+            h2 {
+                font-size: 33px;
+                letter-spacing: 0.1em;
+                line-height: 1.5em;
+            }
+        }
+
+        #required_time_area {
+            width: 600px;
+            text-align: center;
+            margin: 0 auto;
+
+            p {
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        #fixed_datetime_area {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+
+            span {
+                font-size: 24px;
+                margin-left: 3px;
+            }
+        }
+
+        #description_area {
+            width: 100%;
+            text-align: left;
+            margin: 0 auto 10px auto;
+            padding: 20px 50px;
+
+            p {
+                line-height: 1.7em;
+            }
+        }
+
+        .map_type {
+            text-align: center;
+            font-size: 27px;
+            letter-spacing: 0.2em;
+        }
+
+        #googlemaps {
+            width: 564px;
+            height: 400px;
+            margin: 0 auto 30px auto;
+            border: 5px solid @siteColor02;
+            .rounded(7px);
+        }
+    }
+}
+
+#input_answers_area {
+    width: 670px;
+    text-align: center;
+    margin: 20px auto 50px auto;
+
+    #point_of_hidden_note {
+        margin: 10px 0;
+    }
+
+    #answers_table_box {
+        width: 670px;
+        margin: 20px auto;
+        overflow: scroll;
+        display: none;
+        padding: 20px;
+        background: #fff;
+        .rounded(10px);
+        .shadow03;
+        z-index: 100;
+    }
+
+    .input_answer_box {
+        .cf;
+        width: 600px;
+        text-align: center;
+        margin: 0 auto 0 auto;
+        padding: 15px 0;
+        border-bottom: 1px solid #ee9944;
+
+        .datetime_box {
+            float: left;
+
+            p {
+                font-size: 25px;
+                line-height: 1.1em;
+
+                .year {
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .answer_radio_box {
+            width: 97px;
+            float: right;
+
+            label {
+                font-size: 14px;
+                line-height: 1.1em;
+            }
+        }
+    }
+}
+
+#input_area {
+    width: 600px;
+    margin: 0 auto;
+    text-align: left;
+
+    .input_title {
+        margin-top: 20px;
+        margin-bottom: 2px;
+    }
+
+    #member_name {
+        .input;
+        width: 380px;
+        margin-bottom: 7px;
+    }
+
+    #comment {
+        .input;
+        width: 600px;
+        height: 200px;
+        resize: none;
+    }
+}
+
+// --------------------------------------------------
+// マスターページ
+// --------------------------------------------------
+#answers_table_area {
+    width: 90%;
+    overflow: scroll;
+    margin: 20px auto 30px auto;
+}
+
+#comments {
+    width: 100%;
+    margin: 0 0 40px 0;
+
+    // 吹き出し
+    .comment_wrapper {
+        .cf;
+        width: 620px;
+        margin: 0 auto;
+        padding: 6px 0;
+
+        .member_name {
+            float: left;
+            padding: 0 0 0 0;
+            width: 70px;
+
+            p {
+                float: right;
+                font-size: 14px;
+                line-height: 1.4em;
+                text-align: right;
+                word-wrap: break-word; // 長い英単語でも規定幅を超えると強制改行する設定
+                -ms-word-wrap: break-word; // 長い英単語でも規定幅を超えると強制改行する設定
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .comment_outer {
+            position: relative;
+
+            .comment {
+                position: relative;
+                background: @siteColor03;
+                padding: 13px 20px;
+                width: 520px;
+                text-align: left;
+                .rounded(10px);
+                float: right;
+                font-size: 14px;
+                color: #ffffff;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    border-top: 0 solid transparent;
+                    border-right: 15px solid @siteColor03;
+                    border-bottom: 12px solid transparent;
+                    top: 10px;
+                    left: -15px;
+                }
+            }
+        }
+    }
+}
+
+#create_invitation_btn {
+    // margin: 0 auto 40px auto;
+    .btn_orange;
+}
+
+#input_invitation {
+    width: 580px;
+    margin: 0 auto;
+    text-align: left;
+
+    .input_title {
+        margin-bottom: 2px;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    #description2 {
+        .input;
+        width: 580px;
+        height: 280px;
+        resize: none;
+    }
+
+    #select_map_type {
+        margin: 20px 0;
+    }
+
+    #hidden_note01 {
+        top: 0;
+        left: 195px;
+    }
+
+    #search_map_btn {
+        .input_btn(515px, 65px, @siteColor02);
+        margin-bottom: 10px;
+    }
+
+    #googlemaps {
+        width: 580px;
+        height: 400px;
+        margin: 5px auto 30px auto;
+        border: 5px solid @siteColor02;
+        .rounded(5px);
+    }
+}
+
+// --------------------------------------------------
+// answers_table
+// --------------------------------------------------
+#answers_table {
+    border-collapse: collapse;
+    margin: 10px auto 20px auto;
+
+    .h_row {
+        border-bottom-width: 3px;
+        border-bottom-color: @siteColor01;
+        border-bottom-style: solid;
+        line-height: 1.1em;
+
+        span {
+            font-weight: bold;
+        }
+    }
+    .row {
+        border-bottom-width: 1px;
+        border-bottom-color: @siteColor01;
+        border-bottom-style: solid;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+    }
+    .radio_col {
+        width: 40px;
+        min-width: 40px;
+        max-width: 40px;
+    }
+    .datetimes_col {
+        width: 170px;
+        min-width: 170px;
+        max-width: 170px;
+    }
+    .answers_col {
+        width: 76px;
+        min-width: 70px;
+        max-width: 70px;
+        text-align: center;
+        padding: 4px 4px;
+        font-size: 14px;
+        font-weight: normal;
+        word-wrap: break-word; // 長い英単語でも規定幅を超えると強制改行する設定
+        -ms-word-wrap: break-word; //長い英単語でも規定幅を超えると強制改行する設定
+    }
+    .radio_td {
+        text-align: center;
+    }
+    .datetime_td {
+        text-align: center;
+
+        .year {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+    }
+    .answer_td {
+        text-align: center;
+    }
+    .level1 {
+        background: #f1c6cb;
+    }
+    .level2 {
+        background: #fbeff0;
+    }
+}
+
+// --------------------------------------------------
+// completeページ
+// --------------------------------------------------
+#complete_msg {
+    width: 500px;
+    margin: 20px auto 30px auto;
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
+
+// --------------------------------------------------
+// SNSシェア
+// --------------------------------------------------
+#shere_msg {
+    width: 500px;
+    margin: 30px auto 20px auto;
+    padding: 20px 0 0 0;
+
+    p {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.7em;
+    }
+
+    #sns_btns {
+        margin: 20px auto;
+        padding: 0;
+    }
+}
+
+// --------------------------------------------------
+// sns_btns(SNSボタン)
+// --------------------------------------------------
+#sns_btns {
+    .cf;
+    width: 246px;
+    position: relative;
+
+    #fb {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #google_plus {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #hatena {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #twitter {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #line {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+    }
+}
+
+// --------------------------------------------------
+// パスワード入力画面
+// --------------------------------------------------
+#input_pass_box {
+    width: 390px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    padding: 50px 0;
+    background: #fff;
+    margin-bottom: 50px;
+    border-top: @siteColor02 5px solid;
+    .shadow02;
+    .rounded(7px);
+
+    #input_pass_box p {
+        font-size: 15px;
+
+    }
+    #input_pass {
+        width: 320px;
+        .input_btn(240px, 80px, @siteColor02);
+        margin: 20px auto 20px auto;
+        padding: 10px 0 0 0;
+    }
+}
+
+// --------------------------------------------------
+// 利用規約
+// --------------------------------------------------
+#user_agreement {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0 50px 0;
+    text-align: left;
+}
+    #user_agreement h2 {
+        font-size: 32px;
+        letter-spacing: 0.1em;
+        margin: 0 0 30px 0;
+    }
+    .formal {
+        width: 730px;
+        margin: 0 auto;
+        text-align: left;
+    }
+        .formal p {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        .formal h3 {
+            font-size: 19px;
+            color: #3d3d3d;
+            margin: 30px 0 10px 0;
+        }
+        .formal h4 {
+            font-size: 16px;
+            color: #3d3d3d;
+            font-weight: bold;
+        }
+        .formal ul {
+            margin: 20px 0 20px 20px;
+            font-size: 14px;
+        }
+            .formal ul li {
+                margin-bottom: 6px;
+            }
+        .formal ol {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal ol li {
+                margin-bottom: 20px;
+                line-height: 1.9em;
+                list-style-type: decimal;
+            }
+        .formal .paren_num {
+            margin: 20px 0 20px 60px;
+            font-size: 14px;
+        }
+        .formal ol li > .paren_num {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal .paren_num li {
+                list-style-type: none;
+                list-style-position: inside;
+                counter-increment: cnt;
+                text-indent: -21px;
+                margin-bottom: 7px;
+            }
+            .formal .paren_num li:before {
+                display: marker;
+                content: '(' counter(cnt) ')';
+                margin-right: 3px;
+                }
+        .formal address {
+            font-style: normal;
+            font-size: 14px;
+            margin: 20px 0 20px 20px;
+        }
+        .to_pagetop {
+            text-align: right;
+        }
+
+// --------------------------------------------------
+// フッター
+// --------------------------------------------------
+#footer_area {
+    width: 100%;
+    background: @siteColor01;
+}
+    #footer {
+        width: @wholeWidth;
+        height: 110px;
+        margin: 50px auto 0 auto;
+        text-align: center;
+    }
+        #footer small {
+            font-size: 13px;
+            color: #fff;
+            position: relative;
+            top: 45px;
+            margin-bottom: 50px;
+        }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
@@ -7,8 +8,6 @@ require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
 require_once('classes/ManageEvent.php');
-
-session_start();
 
 // 二重ポスト、CSRF対策
 if (empty($_POST['token']) || $_POST['token'] != $_SESSION['token']) {
@@ -49,5 +48,9 @@ if (!($_POST['map_location'] == '')) {
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $manageEvent->fix($fix, $description2, $map_type, $map_location);
 
+// メールアドレスの削除
+if (!($event['mail'] == null || $event['mail'] == 'deleted')) {
+    $manageEvent->deleteMail();
+}
 
 header('Location: ' . SITE_URL . 'fixed.php?address=' . $_SESSION['address']);

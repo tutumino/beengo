@@ -1,13 +1,11 @@
 <?php
+session_start();
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
 require_once('funcs/funcs.php');
 require_once('classes/ManageDB.php');
 require_once('classes/ManageEvent.php');
-
-session_start();
-// var_dump($_SESSION['eventId']);
 
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $res = $manageEvent->getEvent();
@@ -17,7 +15,6 @@ $res = $res->fetch(PDO::FETCH_ASSOC);
 // $_SESSION['login'] = '';
 
 // メール文の作成
-// $shortenedDesc = mb_substr($res['description'], 0, 120) . '……（詳細は下記URLにて）';
 $subject = "「{$res['title']}」日程調整のご案内";
 $body = "イベントページにアクセスして、あなたのご都合をお聞かせください。\n\n○イベントページURL\n" . SITE_URL . "event.php?address={$res['address']}\n\n";
 if ($res['pass'] != '') {
@@ -25,6 +22,13 @@ if ($res['pass'] != '') {
 }
 $encSubject = urlencode($subject);
 $encBody = urlencode($body);
+$encSubject_win = urlencode(mb_convert_encoding($subject, 'SJIS', 'UTF-8')); // Windows用（文字化け対策）
+$encBody_win = urlencode(mb_convert_encoding($body, 'SJIS', 'UTF-8')); // Windows用（文字化け対策）
+
+if ($_SESSION['mail_res'] === false) {
+    echo 'メールの送信に失敗しました。';
+}
+unset($_SESSION['mail_res']);
 
 ?>
 
@@ -37,17 +41,50 @@ $encBody = urlencode($body);
     <title>Beengo | 日程調整・イベント案内ツール</title>
     <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/import.css">
+    <link href="less/style.less" media="screen and (min-width: 641px)" rel="stylesheet/less" />
+    <link href="less/smart.less" media="screen and (max-width: 640px)" rel="stylesheet/less" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/less-1.6.1.min.js"></script>
 
     <script>
 
 $(function() {
-    $('#event_url').select();
     $('#event_url').click(function() {
         $(this).select();
     });
+    $('#master_url').click(function() {
+        $(this).select();
+    });
+})
+
+$(function() {
+
+    $('.hidden_note').hide();
+
+    $('#hidden_note_sw01').click(function() {
+        if ($('#hidden_note01').css('display') == 'none') {
+            $('#hidden_note02').fadeOut(100);
+            $('#hidden_note_sw02').text('説明を表示');
+            $('#hidden_note01').fadeIn(200);
+            $(this).text('説明を隠す');
+        } else {
+            $('#hidden_note01').fadeOut(100);
+            $(this).text('説明を表示');
+        }
+    });
+
+    $('#hidden_note_sw02').click(function() {
+        if ($('#hidden_note02').css('display') == 'none') {
+            $('#hidden_note01').fadeOut(100);
+            $('#hidden_note_sw01').text('説明を表示');
+            $('#hidden_note02').fadeIn(200);
+            $(this).text('説明を隠す');
+        } else {
+            $('#hidden_note02').fadeOut(100);
+            $(this).text('説明を表示');
+        }
+    });
+
 })
 
     </script>
@@ -66,31 +103,44 @@ $(function() {
 
 <?php include ('header.php'); ?>
 
-<div id="created_wrapper" class="shadow2">
+<div id="created_wrapper">
 
     <div id="created_msg">
-        <p>イベントページが作成されました！</p>
-        <p><span>イベント名：<?php echo h($res['title']) ?></span></p>
+        <h2>イベントが作成されました！</h2>
+        <p>イベント名：<?php echo h($res['title']) ?></p>
     <?php
         if ($res['pass'] != '') {
-            echo '<p><span>パスワード：' . h($res['pass']) . '</span></p>';
+            echo '<p>パスワード：' . h($res['pass']) . '</p>';
         }
     ?>
     </div><!--<created_msg>-->
 
-    <div class="this_is_the_URL">
-        <p><span>イベントページのURLはこちら</span></p>
-        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $res['address'] ?>" />
-        <p id="event_url_s"><?php echo SITE_URL . 'event.php?address=' . $res['address'] ?></p>
-        <p class="input_note">上記のURLをコピーして、参加メンバーに知らせてあげてください。<br />もしくは、下のいずれかの共有方法で送信してあげてください。</p>
-    </div><!--<this_is_the_URL>-->
+    <p class="stress_red">ページを移動する前に、イベントページURL、マスターページURL<?php if ($res['pass'] != '') {echo '、パスワード';} ?>を必ず控えてください。</p>
+    <p class="stress_s">※このページを閉じると、URLの確認が二度とできなくなります。また、このページをブックマークすることはできません。</p>
+
+    <div class="point_of_hidden_note">
+        <p class="url_title">イベントページURL<a id="hidden_note_sw01">説明を表示</a></p>
+        <div class="hidden_note" id="hidden_note01">
+            <p>「イベントページ」とは、参加メンバーが、各日時候補に対して、それぞれの都合（「参加できます！」「参加できるかも」「参加できません」の3択）を登録するためのページです。登録が完了すれば、それが「マスターページ」に反映されます。</p>
+        </div>
+    </div><!-- .point_of_hidden_note -->
+
+    <input type="text" name="" id="event_url" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $res['address'] ?>" />
+    <p id="event_url_s"><?php echo SITE_URL . 'event.php?address=' . $res['address'] ?></p>
+    <p class="stress">上記のURLをコピーして、参加メンバーに知らせてあげてください。もしくは、下のいずれかの共有方法で送信してあげてください。</p>
 
     <div id="event_shere_way">
 
-        <div id="shere_way_btn_wrapper" class="clearfix">
+        <div id="shere_way_btn_wrapper">
 
-            <div id="shere_way_send_mail" class="shadow2">
-                <a href="mailto:?subject=<?php echo $encSubject ?>&amp;body=<?php echo $encBody ?>">メールで送信</a>
+            <div id="shere_way_send_mail">
+                <!-- Windowsの場合とそれ意外の場合で分岐（文字化け防止対策） -->
+                <?php $ua = $_SERVER['HTTP_USER_AGENT']; ?>
+                <?php if (stripos($ua, 'windows') != false): ?>
+                    <a href="mailto:?subject=<?php echo $encSubject_win ?>&amp;body=<?php echo $encBody_win ?>">メールで送信</a>
+                <?php else: ?>
+                    <a href="mailto:?subject=<?php echo $encSubject ?>&amp;body=<?php echo $encBody ?>">メールで送信</a>
+                <?php endif; ?>
             </div><!--<shere_way_send_mail>-->
 
             <div id="shere_way_line">
@@ -125,17 +175,22 @@ $(function() {
         </div><!--<shere_way_btn_wrapper>-->
 
     </div><!--<event_shere_way>-->
+
     <?php
         if ($res['pass'] != '') {
-            echo '<p class="input_note_S">※イベントページを開くにはパスワードの入力が必要です。<br />パスワードも忘れずに知らせてあげてください。</p>';
+            echo '<p class="stress_s_red">※イベントページを開くにはパスワードの入力が必要です。パスワードも忘れずに知らせてあげてください。</p>';
         }
     ?>
 
+    <div class="point_of_hidden_note">
+        <p class="url_title">マスターページURL<a id="hidden_note_sw02">説明を表示</a></p>
+        <div class="hidden_note" id="hidden_note02">
+            <p>「マスターページ」とは、「イベントページ」にて各参加メンバーが登録した、各日時候補に対しての都合（「参加できます！」「参加できるかも」「参加できません」の3択）を確認するための幹事専用ページです。</p>
+        </div>
+    </div><!-- .point_of_hidden_note -->
 
-    <div class="this_is_the_URL">
-        <p><span>マスターページ（幹事用ページ）はこちら</span></p>
-        <?php echo '<p id="master_url"><a href="master.php?address=' . $res['address'] . '">' . SITE_URL . 'master.php?address=' . $res['address'] . '</a></p>' ?>
-    </div><!--<this_is_the_URL>-->
+    <input type="text" name="" id="master_url" readonly="readonly" value="<?php echo SITE_URL . 'master.php?address=' . $res['address'] ?>" />
+    <p id="master_url_s"><?php echo SITE_URL . 'master.php?address=' . $res['address'] ?></p>
 
 </div><!--<created_wrapper>-->
 

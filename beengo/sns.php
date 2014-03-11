@@ -1,3 +1,8 @@
+<?php
+// 使ってない。
+// sns_btn.php（ninja）の方を使う（140228）
+?>
+
 <div id="sns" class="clearfix">
 
     <div id="btn_facebook">

@@ -1,0 +1,1309 @@
+@import "reset.less";
+@import "def.less";
+@import "common_s.less";
+// --------------------------------------------------
+// ヘッダー
+// --------------------------------------------------
+#header_area {
+    .cf;
+    width: 100%;
+    border-top: 5px solid @siteColor01;
+    overflow: visible;
+
+    #header {
+        .cf;
+        width: 95%;
+        margin: 0 auto 20px auto;
+        position: relative;
+        overflow: visible;
+
+        h1 {
+            background: url(../img/logo_smart.png) no-repeat;
+            width: 122px;
+            height: 70px;
+            text-indent: -9999px;
+            position: relative;
+            top: 13px;
+            left: 0;
+
+            &:hover {
+                .translucent(0.8);
+            }
+
+            a {
+                .allLink;
+            }
+        }
+
+        #gmenu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: @textColor;
+            font-size: 10px;
+
+            li {
+                float: left;
+                margin-left: 10px;
+
+                a {
+
+                    display: block;
+                    color: @textColor;
+                    text-decoration: none;
+                    padding: 9px 0;
+
+                    &:visited {
+                        color: @textColor;
+                        text-decoration: none;
+                    }
+                    // &:hover {
+                    //     color: lighten(@textColor, 20%);
+                    //     text-decoration: none;
+                    //     border-bottom: 3px solid @siteColor02;
+                    // }
+                    // &:active {
+                    //     color: @textColor;
+                    //     text-decoration: none;
+                    // }
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　トップエリア
+// --------------------------------------------------
+#top_area {
+    width: 100%;
+    padding: 10px 0;
+
+    #top {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        #catch {
+            text-align: left;
+            margin-top: 10px;
+            padding: 0 15px;
+
+            h2 {
+                font-size: 22px;
+                line-height: 1.5em;
+                /*font-weight: bold;*/
+                margin-bottom: 5px;
+            }
+
+            #immediately {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            #sns_btns {
+                margin: 20px 0;
+                padding: 0;
+            }
+        }
+
+        #captures_area {
+            // width: 500px;
+            // height: 300px;
+            // float: right;
+            // margin-top: -30px;
+            // overflow: hidden;
+            display: none;
+
+            // #captures_wrapper {
+            //     width: 2000px;
+
+            //     img {
+            //         float: left;
+            //         margin: 0;
+            //     }
+            // }
+        }
+
+        #appeal_boxes {
+            // clear: both;
+            // .cf;
+
+            .appeal_box {
+                width: 100%;
+                /*min-height: 464px;*/
+                background: #ffffff;
+                /*padding: 20px;*/
+                text-align: left;
+                padding-bottom: 15px;
+
+                h3 {
+                    font-size: 19px;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                    padding: 12px 15px;
+                    line-height: 1.4em;
+                    /*margin-bottom: 10px;*/
+                    background: @siteColor01;
+                    color: #ffffff;
+                }
+
+                p {
+                    font-size: 15px;
+                    padding: 12px 15px 0 15px;
+                }
+
+                p + p {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　イベントページ作成エリア
+// --------------------------------------------------
+#create_event_area {
+    width: 100%;
+    // margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+
+    #create_event_h {
+        width: 100%;
+        background: @siteColor01;
+        margin-bottom: 40px;
+
+        h3 {
+            padding: 20px 15px 0 15px;
+            font-size: 23px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 12px;
+            color: #ffffff;
+            padding: 10px 15px 20px 15px;
+        }
+    }
+
+    #input_event_info {
+        position: relative;
+        width: 95%;
+        margin: 0 auto 30px auto;
+
+        .input_title {
+            margin-bottom: 2px;
+            font-size: 14px;
+
+            a {
+                margin-left: 10px;
+            }
+        }
+
+        input[type="text"] {
+            width: 100%;
+            .input;
+        }
+
+        #required_time {
+            .appearanceNon;
+            .input;
+            width: 100%;
+            background: url(../img/select_arrow.png) no-repeat;
+            background-position: 95% 50%;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            .input;
+            height: 300px;
+            line-height: 1.5;
+            resize: none;
+        }
+    }
+
+    #hidden_note01 {
+        top: 46px;
+    }
+
+    #hidden_note02 {
+        top: 46px;
+    }
+
+    #hidden_note03 {
+        top: 46px;
+    }
+
+    #hidden_note04 {
+        top: 68px;
+    }
+}
+
+// --------------------------------------------------
+// トップページ　カレンダー
+// --------------------------------------------------
+#cal_area {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+
+    .input_title {
+        font-size: 31px;
+        letter-spacing: 4px;
+
+        a {
+            font-size: 16px;
+            letter-spacing: 0;
+            margin-left: 10px;
+        }
+    }
+
+    #cal_switch_btn_area {
+        .cf;
+        width: 60%;
+        text-align: center;
+        margin: 20px auto 10px auto;
+
+        #pre_month_btn {
+            float: left;
+            font-size: 15px;
+            color: @siteColor01;
+            margin: 3px 7px;
+            text-decoration: underline;
+            cursor: pointer;
+            .selectNon;
+
+            // &:hover {
+            //     color: lighten(@siteColor01, 20%)
+            // }
+        }
+
+        #nxt_month_btn {
+            float: right;
+            font-size: 15px;
+            color: @siteColor01;
+            margin: 3px 7px;
+            text-decoration: underline;
+            cursor: pointer;
+            .selectNon;
+
+            // &:hover {
+            //     color: lighten(@siteColor01, 20%)
+            // }
+        }
+    }
+
+    #insert_cal_area {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+
+        table {
+            width: 300px;
+            margin: 0 auto 100px auto;
+            border-collapse: collapse;
+            // border: none;
+            border-spacing: 0;
+            .shadow01;
+
+            .cal_head {
+                // border: 1px solid @siteColor01;
+                background: @siteColor01;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                padding: 8px 0 2px 0;
+            }
+            .cal_days_row th {
+                // border: 1px solid @siteColor01;
+                background: @siteColor01;
+                color: #fff;
+                font-size: 11px;
+                text-align: center;
+                padding: 0px 0 5px 0;
+            }
+            td {
+                border: 1px solid #ffffff;
+                color: @textColor;
+                font-size: 13px;
+                text-align: center;
+                padding: 5px 0;
+                .selectNon;
+            }
+            .cal_emptyTd {
+                background: #ffffff;
+                cursor: default;
+            }
+            .cal_off {
+                background: #ffffff;
+                cursor: pointer;
+
+                // &:hover {
+                //     background: #f3f3f3;
+                //     cursor: pointer;
+                // }
+            }
+
+            .cal_on {
+                background: @siteColor02;
+                cursor: pointer;
+
+                // &:hover {
+                //     background: lighten(@siteColor02, 5%);
+                //     cursor: pointer;
+                // }
+            }
+
+            .cal_added {
+                background: lighten(@siteColor02, 32%);
+                cursor: pointer;
+
+                // &:hover {
+                //     background: lighten(@siteColor02, 27%);
+                // }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　時間指定
+// --------------------------------------------------
+#time_select_area {
+    .cf;
+    width: 95%;
+    margin: 0 auto;
+
+    .time_select {
+        width: 43%;
+        text-align: center;
+        float: left;
+        margin: 0 10px;
+
+        .input_title {
+            font-size: 21px;
+        }
+
+        select {
+            .appearanceNon;
+            .input;
+            width: 43%;
+            margin: 0;
+            padding: 5px 6px;
+            background: url(../img/select_arrow.png) no-repeat;
+            background-position: 90% 50%;
+            background-size: 35%;
+            background-color: #fff;
+            cursor: pointer;
+
+            &:disabled {
+                .translucent(0.6);
+                cursor: default;
+            }
+        }
+
+        .colon {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            width: 6px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+// --------------------------------------------------
+// トップページ　日時追加エリア
+// --------------------------------------------------
+#added_datetime_area {
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    margin: 0 auto;
+
+    #added_datetime_table {
+        margin: 10px auto 30px auto;
+        width: 95%;
+        border-collapse: collapse;
+
+        .added_datetime {
+            font-size: 16px;
+            padding: 7px 0;
+
+            .year {
+                font-size: 11px;
+                color: lighten(@textColor, 20%);
+                margin: 0 3px 0 0;
+            }
+        }
+
+        .del_btn {
+            width: 64px;
+            text-align: center;
+            font-size: 12px;
+            color: @linkColor;
+            line-height: 1.3em;
+            cursor: pointer;
+
+            // &:hover {
+            //     color: @hoverColor;
+            //     text-decoration: underline;
+            // }
+            &:active {
+                color: @activeColor;
+                text-decoration: underline;
+            }
+            &:visited {
+                color: @visitedColor;
+            }
+        }
+
+        .hidden {
+             display: none;
+        }
+    }
+}
+
+// --------------------------------------------------
+// createdページ / fixedページ
+// --------------------------------------------------
+#created_wrapper {
+    width: 95%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px 13px;
+    border-top: @siteColor01 solid 5px;
+    text-align: left;
+    .shadow02;
+    position: relative;
+    top: 20px;
+    .rounded(7px);
+
+    #created_msg {
+        text-align: center;
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    .url_title {
+        margin: 30px 0 5px 0;
+        font-weight: bold;
+        position: relative;
+        overflow: visible;
+        font-size: 15px;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    #hidden_note01 {
+        top: 46px;
+    }
+
+    #hidden_note02 {
+        top: 46px;
+    }
+
+    #event_url, #master_url {
+        display: none;
+    }
+
+    #event_url_s, #master_url_s {
+        .input;
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+        line-height: 1.4;
+        padding: 4px 10px;
+        background: #fff;
+    }
+}
+
+#event_shere_way {
+        /*margin: 0 auto 0 auto;*/
+        /*width: 500px;*/
+        position: relative;
+        /*background: #ffffff;*/
+        /*border-top: #cc3344 solid 3px;*/
+        padding: 10px 0;
+    }
+        #shere_way_btn_wrapper {
+            width: 95%;
+            margin: 0 auto;
+        }
+            #shere_way_send_mail {
+                width: 87px;
+                padding: 1px 4px;
+                background: #cc3344;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -o-border-radius: 3px;
+                -ms-border-radius: 3px;
+                border-radius: 3px;
+                margin: 0 auto 10px auto;
+                /*float: left;*/
+            }
+            /*#shere_way_send_mail:hover {
+                background: #bb3344;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+            }*/
+                #shere_way_send_mail a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1px 4px;
+                    color: #ffffff;
+                    font-size: 11px;
+                    font-weight: bold;
+                }
+                #shere_way_send_mail a:visited {
+                    color: #ffffff;
+                }
+                #shere_way_send_mail a:hover {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+            #shere_way_line {
+                width: 90px;
+                margin: 0 auto 5px auto;
+            }
+            #shere_way_facebook {
+                display: none;
+                /*width: 90px;*/
+                /*margin: 0 auto 10px auto;*/
+            }
+            #shere_way_google {
+                width: 90px;
+                margin: 0 auto;
+                /*margin-left: -20px;*/
+            }
+
+// --------------------------------------------------
+// イベントページ
+// --------------------------------------------------
+#invitation_outer {
+    width: 97%;
+    margin: 0 auto;
+    padding: 6px;
+    position: relative;
+    overflow: hidden;
+    top: 10px;
+
+    .ribbon {
+        width: 150px;
+        height: 33px;
+        position: absolute;
+        text-align: center;
+        top: 14px;
+        right: -40px;
+        z-index: 1;
+        background: #cc3344;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        .shadow01;
+
+        p {
+            font-weight: bold;
+            font-size: 15px;
+            padding-top: 2px;
+            color: #932531;
+            text-indent: 10px;
+        }
+
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 27px;
+            right: 129px;
+            z-index: -1;
+            border: 6px solid;
+            border-color: transparent transparent #932531 transparent;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        }
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 27px;
+            right: 3px;
+            z-index: -1;
+            border: 6px solid;
+            border-color: transparent transparent transparent #932531;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        }
+    }
+
+    #invitation {
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        .shadow01;
+        .rounded(5px);
+        padding-bottom: 30px;
+
+        #master_name_area {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 15px;
+            padding: 20px 20px 20px 20px;
+            background: #fafafa;
+            border-top: 4px solid #ee9944;
+            border-bottom: 1px solid #e0e0e0;
+            .rounded(5px, 5px, 0, 0);
+
+            p {
+                font-size: 13px;
+                line-height: 1.6;
+                width: 87%;
+
+                span {
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        #title_area {
+            width: 100%;
+            text-align: center;
+            padding: 10px 20px;
+
+            h2 {
+                font-size: 25px;
+                line-height: 1.5;
+            }
+        }
+
+        #required_time_area {
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+
+            p {
+                font-size: 15px;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        #fixed_datetime_area {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+
+            p {
+                font-size: 12px;
+
+                span {
+                    font-size: 20px;
+                    margin-left: 3px;
+                }
+            }
+
+
+        }
+
+        #description_area {
+            width: 100%;
+            text-align: left;
+            margin: 0 auto 0 auto;
+            padding: 10px 20px;
+
+            p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+        }
+
+        .map_type {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 0.2;
+        }
+
+        #googlemaps {
+            width: 92%;
+            height: 280px;
+            margin: 0 auto;
+            border: 5px solid @siteColor02;
+            .rounded(7px);
+        }
+    }
+}
+
+#input_answers_area {
+    width: 95%;
+    text-align: center;
+    margin: 20px auto;
+
+    #answers_table_box {
+        width: 100%;
+        margin: 20px auto;
+        overflow: scroll;
+        display: none;
+        padding: 20px;
+        background: #fff;
+        .rounded(10px);
+        .shadow03;
+        z-index: 100;
+    }
+
+    .input_answer_box {
+        .cf;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 0 auto;
+        padding: 15px 20px;
+        border-bottom: 1px solid #ee9944;
+
+        .datetime_box {
+            width: 100%;
+            margin-bottom: 5px;
+
+            p {
+                font-size: 25px;
+                line-height: 1.1;
+
+                .year {
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .answer_radio_box {
+            // width: 97px;
+            width: 33%;
+            float: left;
+            line-height: 1.2;
+
+            label {
+                font-size: 14px;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
+#input_area {
+    width: 97%;
+    margin: 0 auto;
+    text-align: left;
+
+    .input_title {
+        margin-top: 20px;
+        margin-bottom: 2px;
+        font-size: 14px;
+    }
+
+    #member_name {
+        .input;
+        width: 100%;
+        margin-bottom: 7px;
+    }
+
+    #comment {
+        .input;
+        width: 100%;
+        height: 200px;
+        resize: none;
+    }
+}
+
+// --------------------------------------------------
+// マスターページ
+// --------------------------------------------------
+.master_page_top_note {
+    width: 95%;
+    margin: 20px auto;
+    position: relative;
+    top: 20px;
+}
+#answers_table_area {
+    width: 95%;
+    overflow: scroll;
+    position: relative;
+    top: 15px;
+    margin: 0 auto 30px auto;
+}
+
+#comments {
+    width: 95%;
+    margin: 0 auto 40px auto;
+
+    // 吹き出し
+    .comment_wrapper {
+         .cf;
+        width: 100%;
+        margin: 0 auto;
+        padding: 6px 0;
+
+        .member_name {
+            float: left;
+            padding: 0 25px 0 0;
+            width: 27%;
+
+            p {
+                float: right;
+                font-size: 13px;
+                line-height: 1.4em;
+                text-align: right;
+                word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+                -ms-word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .comment_outer {
+            position: relative;
+
+            .comment {
+                position: relative;
+                background: @siteColor03;
+                padding: 13px 20px;
+                width: 73%;
+                text-align: left;
+                float: right;
+                font-size: 14px;
+                color: #ffffff;
+                .rounded(10px);
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    border-top: 0 solid transparent;
+                    border-right: 17px solid #ddaa11;
+                    border-bottom: 12px solid transparent;
+                    top: 10px;
+                    left: -17px;
+                }
+            }
+        }
+    }
+}
+
+#create_invitation_btn {
+    // margin: 0 auto 40px auto;
+    .btn_orange;
+}
+
+#input_invitation {
+    width: 95%;
+    margin: 0 auto;
+    text-align: left;
+
+    .input_title {
+        margin-bottom: 2px;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    #description2 {
+        .input;
+        width: 100%;
+        height: 280px;
+        resize: none;
+    }
+
+    #select_map_type {
+        width: 95%;
+        margin: 0 auto 20px auto;
+
+        label {
+            font-size: 13px;
+        }
+    }
+
+    #hidden_note01 {
+        top: 46px;
+    }
+
+    #search_map_btn {
+        .input_btn(85%, 15%, @siteColor02);
+        margin-bottom: 10px;
+
+        input:nth-child(1) {
+            font-size: 12px;
+        }
+    }
+
+    #googlemaps {
+        width: 100%;
+        height: 300px;
+        margin: 0 auto 30px auto;
+        border: 5px solid @siteColor02;
+        .rounded(5px);
+    }
+}
+
+// --------------------------------------------------
+// answers_table
+// --------------------------------------------------
+#answers_table {
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    .h_row {
+        border-bottom-width: 3px;
+        border-bottom-color: @siteColor01;
+        border-bottom-style: solid;
+        line-height: 1.3;
+
+        span {
+            font-weight: bold;
+        }
+    }
+    .row {
+        border-bottom-width: 1px;
+        border-bottom-color: @siteColor01;
+        border-bottom-style: solid;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        padding: 0;
+    }
+    .radio_col {
+        width: 40px;
+        min-width: 40px;
+        max-width: 40px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+    }
+    .datetimes_col {
+        width: 115px;
+        min-width: 115px;
+        max-width: 115px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+    }
+    .answers_col {
+        width: 55px;
+        min-width: 55px;
+        max-width: 55px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        text-align: center;
+        padding: 4px 2px;
+        font-size: 12px;
+        // line-height: 1.3;
+        font-weight: normal;
+        word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+        -ms-word-wrap: break-word; /*長い英単語でも規定幅を超えると強制改行する設定*/
+    }
+    .radio_td {
+        text-align: center;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        padding: 0;
+
+        input[type="radio"] {
+            padding: 0;
+        }
+    }
+    .datetime_td {
+        text-align: left;
+        line-height: 1.2;
+        font-size: 14px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        padding: 0;
+
+        .year {
+            font-size: 9px;
+            // 改行を挿入
+            &:after {
+                content: "\A";
+                white-space: pre;
+            }
+        }
+    }
+    .answer_td {
+        text-align: center;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        padding: 0;
+        vertical-align: middle;
+        // margin-bottom: -10px;
+
+        img {
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+    }
+    .level1 {
+        background: #f1c6cb;
+    }
+    .level2 {
+        background: #fbeff0;
+    }
+}
+
+// --------------------------------------------------
+// completeページ
+// --------------------------------------------------
+#complete_msg {
+    width: 97%;
+    position: relative;
+    top: 20px;
+    margin: 0 auto 30px auto;
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+// --------------------------------------------------
+// SNSシェア
+// --------------------------------------------------
+#shere_msg {
+    width: 320px;
+    margin: 30px auto 20px auto;
+    padding: 20px 10px 0 10px;
+
+    p {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.7em;
+    }
+
+    #sns_btns {
+        margin: 20px auto;
+        padding: 0;
+    }
+}
+
+// --------------------------------------------------
+// sns_btns(SNSボタン)
+// --------------------------------------------------
+#sns_btns {
+    .cf;
+    width: auto;
+    position: relative;
+
+    #fb {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #google_plus {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #hatena {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #twitter {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+        margin-right: 5px;
+    }
+
+    #line {
+        // width: 72px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        bottom: 0;
+    }
+}
+
+// --------------------------------------------------
+// パスワード入力画面
+// --------------------------------------------------
+#input_pass_box {
+    width: 280px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    padding: 50px 0;
+    background: #fff;
+    margin-bottom: 50px;
+    border-top: @siteColor02 5px solid;
+    .shadow02;
+    .rounded(7px);
+
+    #input_pass_box p {
+        font-size: 14px;
+
+    }
+    #input_pass {
+        width: 260px;
+        .input_btn(200px, 60px, @siteColor02);
+        margin: 20px auto 20px auto;
+        padding: 10px 0 0 0;
+
+        input:nth-child(2) {
+            font-size: 12px;
+        }
+    }
+}
+
+// --------------------------------------------------
+// 利用規約
+// --------------------------------------------------
+#user_agreement {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0 50px 0;
+    text-align: left;
+    line-height: 1.8em;
+}
+    #user_agreement h2 {
+        font-size: 32px;
+        letter-spacing: 0.1em;
+        margin: 0 0 30px 0;
+    }
+    .formal {
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+    }
+        .formal p {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        .formal h3 {
+            font-size: 19px;
+            color: #3d3d3d;
+            margin: 30px 0 10px 0;
+        }
+        .formal h4 {
+            font-size: 16px;
+            color: #3d3d3d;
+            font-weight: bold;
+        }
+        .formal ul {
+            margin: 20px 0 20px 20px;
+            font-size: 14px;
+        }
+            .formal ul li {
+                margin-bottom: 6px;
+            }
+        .formal ol {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal ol li {
+                margin-bottom: 20px;
+                line-height: 1.8em;
+                list-style-type: decimal;
+            }
+        .formal .paren_num {
+            margin: 20px 0 20px 60px;
+            font-size: 14px;
+        }
+        .formal ol li > .paren_num {
+            margin: 20px 0 20px 40px;
+            font-size: 14px;
+        }
+            .formal .paren_num li {
+                list-style-type: none;
+                list-style-position: inside;
+                counter-increment: cnt;
+                text-indent: -21px;
+                margin-bottom: 7px;
+            }
+            .formal .paren_num li:before {
+                display: marker;
+                content: '(' counter(cnt) ')';
+                margin-right: 3px;
+                }
+        .formal address {
+            font-style: normal;
+            font-size: 14px;
+            margin: 20px 0 20px 20px;
+        }
+        .to_pagetop {
+            text-align: right;
+        }
+
+// --------------------------------------------------
+// フッター
+// --------------------------------------------------
+#footer_area {
+    width: 100%;
+    background: @siteColor01;
+}
+    #footer {
+        width: 100%;
+        height: 110px;
+        margin: 50px auto 0 auto;
+        text-align: center;
+    }
+        #footer small {
+            font-size: 13px;
+            color: #fff;
+            position: relative;
+            top: 45px;
+            margin-bottom: 50px;
+        }

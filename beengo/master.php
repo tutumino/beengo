@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
@@ -7,8 +8,6 @@ require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
 require_once('classes/ManageEvent.php');
-
-session_start();
 
 // 二重ポスト、CSRF対策
 $token = sha1(uniqid(rand(), true));
@@ -53,9 +52,10 @@ $manageEvent->close();
     <title>Beengo | 日程調整・イベント案内ツール</title>
     <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/import.css">
+    <link href="less/style.less" media="screen and (min-width: 641px)" rel="stylesheet/less" />
+    <link href="less/smart.less" media="screen and (max-width: 640px)" rel="stylesheet/less" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/less-1.6.1.min.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
     <script type="text/javascript" src="js/prevent_enter_submit.js"></script>
     <script type="text/javascript" src="js/jquery.ah-placeholder.js"></script>
@@ -75,6 +75,22 @@ $(function() {
     });
 })
 
+$(function() {
+
+    $('.hidden_note').hide();
+
+    $('#hidden_note_sw01').click(function() {
+        if ($('#hidden_note01').css('display') == 'none') {
+            $('#hidden_note01').fadeIn(200);
+            $(this).text('説明を隠す');
+        } else {
+            $('#hidden_note01').fadeOut(100);
+            $(this).text('説明を表示');
+        }
+    });
+
+})
+
     </script>
 
 </head>
@@ -92,9 +108,10 @@ $(function() {
 
 <form action="fix.php" method="post">
 
-    <p class="input_note">参加者がイベントページで、各日時候補に対しての都合を登録すると、それが下の表に反映されます。</p>
+    <p class="master_page_top_note">参加者がイベントページで、各日時候補に対しての都合を登録すると、下の表に反映されます。</p>
 
     <div id="answers_table_area">
+
         <table id="answers_table">
             <thead></thead>
             <tbody>
@@ -102,7 +119,7 @@ $(function() {
                     <th class="radio_col"></th>
                     <th class="datetimes_col"></th>
                     <?php foreach ($registers as $value):  ?>
-                        <th class="answers_col"><?php echo h($value['member_name']) . '<br />さん' ?></th>
+                        <th class="answers_col"><span><?php echo h($value['member_name']) . '</span><br />さん' ?></th>
                     <?php endforeach ?>
                 </tr>
             <?php for ($i = 0; $i < count($datetimes); $i++): ?>
@@ -126,10 +143,10 @@ $(function() {
 
                         for ($j = 0; $j < count($registers); $j++) {
                             // すべて「ok」なら、tdのclassにlevel1を付ける
-                            if ($temp['ok'] == count($registers))  {
+                            if (isset($temp['ok']) && $temp['ok'] == count($registers))  {
                                 echo '<td class="level1 answer_td">';
-                             // すべて「noでない」なら、tdのclassにlevel2を付ける
-                            } elseif ($temp['no'] == 0) {
+                             // 「no」が1つもなければ、tdのclassにlevel2を付ける
+                            } elseif (!isset($temp['no'])) {
                                 echo '<td class="level2 answer_td">';
                             // それ以外なら、tdのclassにlevelを付けない
                             } else {
@@ -162,11 +179,11 @@ $(function() {
 
         <?php if ($registers[$i]['comment'] == '') {continue; } ?>
 
-            <div class="comment_wrapper" class="clearfix">
+            <div class="comment_wrapper">
 
-                <div class="member_name clearfix">
+                <div class="member_name">
                     <p>
-                        <?php echo h($registers[$i]['member_name']) . '<br />さん' ?>
+                        <span><?php echo h($registers[$i]['member_name']) . '</span><br />さん' ?>
                     </p>
                 </div><!--<member_name>-->
 
@@ -182,16 +199,17 @@ $(function() {
 
     </div><!--<comments>-->
 
-    <p id="create_invitation_btn"><a>ラジオボタンで選択した日時で<br />「イベントページ」を日時決定案内状に更新する▼</a></p>
+    <p class="note_c14">ラジオボタンで選択した日時でイベント案内状を作成するには<br />「イベント情報を入力」ボタンをクリック！</p><!-- .text_c14 -->
+
+    <input type="button" id="create_invitation_btn" value="イベント情報を入力" />
 
     <div id="input_invitation">
 
-        <div class="input_part">
-            <p class="input_note">イベント概要、コメントなどを入力してください。<br />変更を加えなければ、「イベントページ」作成時の文面がそのまま挿入されます。</p>
-            <textarea name="description2" id="description2" cols="40" rows="10" class="textarea count1280" placeholder="イベントの概要、詳細、コメントなど"><?php echo $event['description']; ?></textarea>
-        </div>
+        <p class="input_title">イベントの詳細、参加者へのコメントなど</p>
+        <p class="stress_s">※変更を加えなければ、「イベント」作成時の文面がそのまま挿入されます。</p>
+        <textarea name="description2" id="description2" cols="40" rows="10" class="textarea count1280" placeholder=""><?php echo $event['description']; ?></textarea>
 
-        <div class="input_part" id="select_map_type">
+        <div id="select_map_type">
             <p>
                 <input type="radio" name="map_type" id="map_type1" class="map_type" value="map_type1" checked />
                 <label for="map_type1">「会場」として地図を付ける</label>
@@ -204,19 +222,24 @@ $(function() {
                 <input type="radio" name="map_type" id="map_type3" class="map_type" value="map_type3" />
                 <label for="map_type3">地図を付けない</label>
             </p>
-        </div>
+        </div><!-- #select_map_type -->
 
-        <div id="search_map_btn" class="clearfix">
-            <input type="text" name="map_location" id="map_location" class="input_text count64" placeholder="住所、駅名、建物名などで地図を検索" />
-            <input type="button" value="検索" class="btn_red" onclick="searchMap();" />
+        <div class="point_of_hidden_note">
+            <p class="input_title">地図を検索<a id="hidden_note_sw01">説明を表示</a></p>
+            <div class="hidden_note" id="hidden_note01">
+                <p>「案内状」に表示させたい地図を検索します。目的の地図が検索されたキーワードを、必ずそのまま残しておいてください。</p>
+                <p>地名、駅名、建物名などで目的の場所が検索されない場合は、住所での検索をお試しください。（検索の精度は「Google マップ」の仕様によります）。</p>
+            </div>
+        </div><!-- .point_of_hidden_note -->
+        <div id="search_map_btn">
+            <input type="text" name="map_location" id="map_location" class="count64" placeholder="住所、地名、駅名、建物名など" />
+            <input type="button" value="検索" onclick="searchMap();" />
         </div><!--<search_map_btn>-->
 
         <div id="googlemaps"></div>
 
-        <div class="input_part">
-            <p class="input_note">入力内容をよくご確認のうえ、<br />「イベントページを更新」ボタンを押してください。<br />（確認ページは表示されません）</p>
-            <input type="submit" class="btn_red shadow" value="イベントページを更新" />
-        </div><!--<input_part>-->
+        <p class="note_c14">入力内容をよくご確認のうえ、<br />「イベントページを更新」ボタンを押してください。<br />（確認ページは表示されません）</p>
+        <input type="submit" class="btn_red shadow" value="イベント案内状を作成" />
 
     </div><!--<input_invitation>-->
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('../config/config.php');
 require_once('../config/jp_setting.php');
@@ -7,13 +8,6 @@ require_once('classes/ManageDB.php');
 require_once('classes/GetEventID.php');
 require_once('classes/CheckLogin.php');
 require_once('classes/ManageEvent.php');
-
-
-session_start();
-
-// $_SESSION['address'] = $_GET['address'];
-// $getEventId = new GetEventID;
-// $_SESSION['event_id'] = $getEventId->get($_SESSION['address']);
 
 $manageEvent = new ManageEvent($_SESSION['event_id']);
 $event = $manageEvent->getEvent();
@@ -36,7 +30,6 @@ $fixed = $manageEvent->getFixed();
 $manageEvent->close();
 
 // メール文の作成
-// $shortenedDesc = mb_substr($event['description2'], 0, 120) . '……（詳細は下記URLにて）';
 $subject = "「{$event['title']}」日時決定のご案内";
 $body = "イベントページにアクセスして、日時とイベントの詳細をご確認ください。\n\n○イベントページURL\n" . SITE_URL . "event.php?address={$_SESSION['address']}\n\n";
 if ($event['pass'] != '') {
@@ -44,6 +37,8 @@ if ($event['pass'] != '') {
 }
 $encSubject = urlencode($subject);
 $encBody = urlencode($body);
+$encSubject_win = urlencode(mb_convert_encoding($subject, 'SJIS', 'UTF-8')); // Windows用（文字化け対策）
+$encBody_win = urlencode(mb_convert_encoding($body, 'SJIS', 'UTF-8')); // Windows用（文字化け対策）
 
 ?>
 
@@ -56,9 +51,10 @@ $encBody = urlencode($body);
     <title>Beengo | 日程調整・イベント案内ツール</title>
     <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/import.css">
+    <link href="less/style.less" media="screen and (min-width: 641px)" rel="stylesheet/less" />
+    <link href="less/smart.less" media="screen and (max-width: 640px)" rel="stylesheet/less" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/less-1.6.1.min.js"></script>
 
     <script>
 
@@ -85,26 +81,32 @@ $(function() {
 
 <?php include ('header.php'); ?>
 
-<div id="created_wrapper" class="shadow2">
+<div id="created_wrapper">
 
     <div id="created_msg">
-        <p><span>「<?php echo h($event['title']) ?>」</span>のイベントページが更新されました！</p>
-        <p>日時は<span><?php echo $fixed['year'] . '年' . $fixed['month'] . '月' . $fixed['date'] . '日' . $fixed['day'] . $fixed['time'] ?></span>に決定しました。</p>
-    </div><!--<fixed_msg>-->
+        <h2>「<?php echo h($event['title']) ?>」のイベントページが更新されました！</h2>
+        <p>日時は<?php echo $fixed['year'] . '年' . $fixed['month'] . '月' . $fixed['date'] . '日' . $fixed['day'] . $fixed['time'] ?>に決定しました。</p>
+    </div><!--<created_msg>-->
 
     <div class="this_is_the_URL">
-        <p><span>イベントページのURLはこちら</span></p>
-        <input type="text" name="" id="event_url" class="input_text" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?>" />
+        <p class="url_title">イベントページURL</p>
+        <input type="text" name="" id="event_url" readonly="readonly" value="<?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?>" />
         <p id="event_url_s"><?php echo SITE_URL . 'event.php?address=' . $_SESSION['address'] ?></p>
-        <p class="input_note">上記のURLをコピーして、参加メンバーに知らせてあげてください。<br />もしくは、下のいずれかの共有方法で送信してあげてください。</p>
+        <p class="stress">上記のURLをコピーして、参加メンバーに知らせてあげてください。もしくは、下のいずれかの共有方法で送信してあげてください。</p>
     </div><!--<this_is_the_URL>-->
 
     <div id="event_shere_way">
 
-        <div id="shere_way_btn_wrapper" class="clearfix">
+        <div id="shere_way_btn_wrapper">
 
-            <div id="shere_way_send_mail" class="shadow2">
-                <a href="mailto:?subject=<?php echo $encSubject ?>&amp;body=<?php echo $encBody ?>">メールで送信</a>
+            <div id="shere_way_send_mail">
+                <!-- Windowsの場合とそれ意外の場合で分岐（文字化け防止対策） -->
+                <?php $ua = $_SERVER['HTTP_USER_AGENT']; ?>
+                <?php if (stripos($ua, 'windows') != false): ?>
+                    <a href="mailto:?subject=<?php echo $encSubject_win ?>&amp;body=<?php echo $encBody_win ?>">メールで送信</a>
+                <?php else: ?>
+                    <a href="mailto:?subject=<?php echo $encSubject ?>&amp;body=<?php echo $encBody ?>">メールで送信</a>
+                <?php endif; ?>
             </div><!--<shere_way_send_mail>-->
 
             <div id="shere_way_line">
@@ -139,17 +141,19 @@ $(function() {
         </div><!--<shere_way_btn_wrapper>-->
 
     </div><!--<event_shere_way>-->
+
     <?php
         if ($event['pass'] != '') {
-            echo '<p class="input_note_S">※イベントページを開くにはパスワードの入力が必要です。<br />パスワードも忘れずに知らせてあげてください。</p>';
+            echo '<p class="stress_s_red">※イベントページを開くにはパスワードの入力が必要です。パスワードも忘れずに知らせてあげてください。</p>';
         }
     ?>
 
 </div><!--<created_wrapper>-->
 
 <div id="shere_msg">
-    <p>もしもBeengoを「役に立った！」と思ったら、<br />「いいね！」「シェア」していただけると、とても嬉しいです。</p>
-    <?php include ('sns.php'); ?>
+    <p>ご利用ありがとうございました。</p>
+    <p>もしもBeengoを「役に立った！」と思われたら、<br />「いいね！」「シェア」していただけると、とても嬉しいです。</p>
+    <?php include ('sns_btn.php'); ?>
 </div><!--<shere_msg>-->
 
 <?php include 'footer.php' ?>

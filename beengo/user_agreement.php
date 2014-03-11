@@ -15,9 +15,10 @@ require_once('../config/jp_setting.php');
     <meta name="description" content="">
     <link rel="shortcut icon" href="http://beengo.cc/favicon.ico" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/import.css" />
+    <link href="less/style.less" media="screen and (min-width: 641px)" rel="stylesheet/less" />
+    <link href="less/smart.less" media="screen and (max-width: 640px)" rel="stylesheet/less" />
     <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/less-1.6.1.min.js"></script>
     <script type="text/javascript" src="js/smooth_scroll.js"></script>
 </head>
 
